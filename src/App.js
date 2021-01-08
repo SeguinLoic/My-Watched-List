@@ -1,4 +1,11 @@
+import React from "react";
 import './App.css';
+
+import got from "./images/got.jpg"
+import dame from "./images/dame.jpg"
+import mandalorian from "./images/mandalorian.jpg"
+import vikings from "./images/vikings.jpg"
+import umbrella from "./images/umbrella.jpg"
 
 function App() {
   return (
@@ -11,12 +18,20 @@ function App() {
         </form>
       </header>
 
+      <h2>Les dernières sorties</h2>
       <div className="sorties">
-        <img src="./images/got.jpg"/>
-        <img src="./images/dame.jpg"/>
-        <img src="./images/mandalorian.jpg"/>
-        <img src="./images/vikings.jpg"/>
-        <img src="./images/umbrella.jpg"/>
+        <img src={got} alt="got"/>
+        <img src={dame} alt="dame"/>
+        <img src={mandalorian} alt="mandalorian"/>
+        <img src={vikings} alt="vikings"/>
+        <img src={umbrella} alt="umbrella"/>
+      </div>
+
+      <h2>Mon top</h2>
+      <div className="monTop">
+        <img src={dame} alt="dame"/>
+        <img src={mandalorian} alt="mandalorian"/>
+        <img src={umbrella} alt="umbrella"/>
       </div>
     </div>
   );

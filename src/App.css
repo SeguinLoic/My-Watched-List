@@ -1,6 +1,22 @@
 body {
-    padding: 25px;
+    padding: 50px;
 }
 body h1 {
     margin: 0px;
+}
+
+header form {
+    margin-top: 25px;
+}
+
+.sorties img:not(:last-child), .monTop img:not(:last-child) {
+    margin-right: 20px;
+}
+.sorties img, .monTop img {
+    width: 180px;
+}
+.sorties, .monTop {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
 }
