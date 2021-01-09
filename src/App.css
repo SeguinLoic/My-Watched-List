@@ -20,3 +20,25 @@ header form {
     flex-direction: row;
     justify-content: flex-start;
 }
+
+
+.attribution {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+}
+.attribution img {
+    width: 350px;
+    margin-top: 5px;
+}
+.attribution span {
+    font-style: italic;
+    padding-bottom: 7px;
+    color: #848484;
+    font-size: 0.9em;
+}
