@@ -9,18 +9,17 @@ header form {
     margin-top: 25px;
 }
 
-.sorties img:not(:last-child), .monTop img:not(:last-child) {
-    margin-right: 20px;
-}
-.sorties img, .monTop img {
-    width: 180px;
-}
-.sorties, .monTop {
+.sorties, .monTop, .search, .result {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
 }
-
+.sorties img, .monTop img, .search img, .result img {
+    width: 180px;
+}
+.sorties img:not(:last-child), .monTop img:not(:last-child), .search img:not(:last-child), .result img:not(:last-child) {
+    margin-right: 20px;
+}
 
 .attribution {
     display: flex;
