@@ -1,5 +1,6 @@
 body {
     padding: 50px;
+    overflow: hidden;
 }
 body h1 {
     margin: 0px;
@@ -7,6 +8,10 @@ body h1 {
 
 header form {
     margin-top: 25px;
+}
+
+.blocSearch {
+    overflow-x: scroll;
 }
 
 .sorties, .monTop, .search, .result {
