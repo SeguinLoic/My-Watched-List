@@ -2,11 +2,10 @@ import React, { useState } from "react";
 import './App.css';
 
 import Header from "../../components/Header/Header";
+import Trending from "./Trending/Trending"
 
-import got from "../../images/got.jpg"
 import dame from "../../images/dame.jpg"
 import mandalorian from "../../images/mandalorian.jpg"
-import vikings from "../../images/vikings.jpg"
 import umbrella from "../../images/umbrella.jpg"
 import logoTMDB from "../../images/logo-tmdb.svg";
 
@@ -41,16 +40,7 @@ function App() {
             </div>
           </div>
           : 
-            <div className="blocSortie">
-              <h2>Les dernières sorties</h2>
-              <div className="sorties">
-                <img src={got} alt="got"/>
-                <img src={dame} alt="dame"/>
-                <img src={mandalorian} alt="mandalorian"/>
-                <img src={vikings} alt="vikings"/>
-                <img src={umbrella} alt="umbrella"/>
-              </div>
-            </div>
+            <Trending />
 
         }
       </div>
