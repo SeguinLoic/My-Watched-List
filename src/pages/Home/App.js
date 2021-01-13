@@ -3,6 +3,7 @@ import './App.css';
 
 import Header from "../../components/Header/Header";
 import Trending from "./Trending/Trending"
+import Tile from "../../components/Tile/Tile"
 
 import dame from "../../images/dame.jpg"
 import mandalorian from "../../images/mandalorian.jpg"
@@ -27,15 +28,7 @@ function App() {
             <h2>Ma recherche</h2>
             <div className="result">
               {
-                result.map(res => {
-                  return (
-                    <div>
-                      <img src={`https://image.tmdb.org/t/p/w500${res.poster_path}`} alt="hey"/>
-                      {res.original_name}
-                      <button onClick={() => setMyList([...myList, {res, note: ""}])}>Ajouter à ma liste</button>
-                    </div>
-                  )
-                })
+                result.map( mediaInfo => <Tile mediaInfo={mediaInfo} addList /> )
               } 
             </div>
           </div>

@@ -22,7 +22,7 @@ export default function Trending() {
             <h2>Les dernières sorties</h2>
             <div className="sorties">
                 {
-                    topTrends.map(mediaInfo => <Tile mediaInfo={mediaInfo} /> )
+                    topTrends.map(mediaInfo => <Tile mediaInfo={mediaInfo} addList /> )
                 }
             </div>
         </div>
