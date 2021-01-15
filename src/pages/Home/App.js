@@ -5,6 +5,8 @@ import Header from "../../components/Header/Header";
 import Trending from "./Trending/Trending"
 import Tile from "../../components/Tile/Tile"
 
+import Connexion from "../Connexion/Connexion"
+
 import dame from "../../images/dame.jpg"
 import mandalorian from "../../images/mandalorian.jpg"
 import umbrella from "../../images/umbrella.jpg"
@@ -19,6 +21,8 @@ function App() {
     <div className="App">
 
       <Header setResult={setResult} />
+
+      <Connexion />
 
       <div className="search">
         {

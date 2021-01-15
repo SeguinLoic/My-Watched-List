@@ -13,3 +13,14 @@ var firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
+
+export const userConnexion = (userID, userPassword, e) => {
+    e.preventDefault();
+    firebase.auth().signInWithEmailAndPassword(userID, userPassword)
+    .then((user) => {
+      console.log(user);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}
