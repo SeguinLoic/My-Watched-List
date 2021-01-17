@@ -4,9 +4,9 @@ import Header from "../../components/Header/Header";
 import Trending from "./Trending/Trending"
 import Tile from "../../components/Tile/Tile"
 
-import dame from "../../images/dame.jpg"
-import mandalorian from "../../images/mandalorian.jpg"
-import umbrella from "../../images/umbrella.jpg"
+import dame from "../../assets/dame.jpg"
+import mandalorian from "../../assets/mandalorian.jpg"
+import umbrella from "../../assets/umbrella.jpg"
 
 export default function Home() {
 

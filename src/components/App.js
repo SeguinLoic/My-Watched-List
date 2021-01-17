@@ -2,23 +2,24 @@ import React from "react";
 import './App.css';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
-import Home from "./pages/Home/Home"
-import Login from "./pages/Authentication/Login"
-import {AuthProvider} from "./"
+import Home from "../pages/Home/Home"
+import Login from "./Authentication/Login"
+import { AuthProvider } from "./Authentication/Auth"
 
-import logoTMDB from "./images/logo-tmdb.svg";
+import logoTMDB from "../assets/logo-tmdb.svg";
 
 function App() {
 
   return (
     <div className="App">
-
-      <Router>
-        <div>
-          <Route exact path="/" component={Home}/>
-          <Route exact path="/login" component={Login}/>
-        </div>
-      </Router>
+      <AuthProvider>
+        <Router>
+          <div>
+            <Route exact path="/" component={Home}/>
+            <Route exact path="/login" component={Login}/>
+          </div>
+        </Router>
+      </AuthProvider>
 
       <Login />
 
