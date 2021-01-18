@@ -1,32 +1,41 @@
-import React from "react";
+import React, { useContext } from "react";
 import './App.css';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 
 import Home from "../pages/Home/Home"
+import Profile from "../pages/Profile/Profile"
 import Login from "./Authentication/Login"
-import { AuthProvider } from "./Authentication/Auth"
+import Logout from "./Authentication/Logout"
+import { AuthContext } from "./Authentication/Auth";
 
-import logoTMDB from "../assets/logo-tmdb.svg";
+import Attribution from "./Attribution/Attribution";
 
 function App() {
 
+  const {currentUser} = useContext(AuthContext);
+
   return (
     <div className="App">
-      <AuthProvider>
-        <Router>
-          <div>
-            <Route exact path="/" component={Home}/>
-            <Route exact path="/login" component={Login}/>
-          </div>
-        </Router>
-      </AuthProvider>
 
-      <Login />
+      {
+        currentUser 
+        ?
+          <Router>
+            <nav>
+              <Link to="/Home">Home</Link>
+              <Link to="/Profile">Profile</Link>
+            </nav>
+            <Switch>
+              <Route exact path="/Home" component={Home}/>
+              <Route exact path="/Profile" component={Profile}/>
+              <Route exact path="/logout" component={Logout}/>
+            </Switch>
+          </Router> 
+        : 
+        <Login />
+      }
 
-      <div className="attribution">
-        <span>This product uses the TMDb API but is not endorsed or certified by TMDb.</span>
-        <img src={logoTMDB} alt="Logo TMDB" />
-      </div>
+      <Attribution />
       
     </div>
   );
