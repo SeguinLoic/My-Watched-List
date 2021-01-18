@@ -24,6 +24,7 @@ function App() {
             <nav>
               <Link to="/Home">Home</Link>
               <Link to="/Profile">Profile</Link>
+              <Logout />
             </nav>
             <Switch>
               <Route exact path="/Home" component={Home}/>
