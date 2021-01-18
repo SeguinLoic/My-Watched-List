@@ -4,6 +4,7 @@ import firebase from "firebase/app";
 export default function Connexion() {
 
     const [userInfo, setUserInfo] = useState({userID: "", userPassword: ""});
+    const [error, setError] = useState("");
 
     const handleChange = (e) => {
         const value = e.target.value;
@@ -14,10 +15,10 @@ export default function Connexion() {
         e.preventDefault();
         firebase.auth().signInWithEmailAndPassword(userID, userPassword)
         .then((user) => {
-          //console.log(user)
+          console.log(user)
         })
         .catch((error) => {
-          //console.log(error);
+          setError(error.message);
         });
     }
 
@@ -30,6 +31,7 @@ export default function Connexion() {
                 <button>Connexion</button>
             </form>
             <button>Pas inscrit ?</button>
+            <div className="message">{error}</div>
         </div>
     )
 }
