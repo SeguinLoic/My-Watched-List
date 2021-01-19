@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import firebase from "firebase/app";
+import { BrowserRouter as Router, Link } from "react-router-dom";
+
+import Signin from "./Signin";
+import "./Login.css";
 
 export default function Connexion() {
 
@@ -23,15 +27,17 @@ export default function Connexion() {
     }
 
     return (
-        <div>
+        <div className="Login">
             <h1>Connexion</h1>
             <form onSubmit={(e) => userConnexion(userInfo.userID, userInfo.userPassword, e)}>
                 <input id="userID"  type="text" placeholder="E-mail" value={userInfo.userID} onChange={handleChange} />
                 <input id="userPassword"  type="password" placeholder="Password" value={userInfo.userPassword} onChange={handleChange} />
                 <button>Connexion</button>
             </form>
-            <button>Pas inscrit ?</button>
             <div className="message">{error}</div>
+            <Router>
+              <Link to="/Signin" component={Signin}>Pas inscrit ?</Link>
+            </Router>
         </div>
     )
 }
