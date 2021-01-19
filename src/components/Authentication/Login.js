@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import firebase from "firebase/app";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { BrowserRouter as Router, Link, Redirect } from "react-router-dom";
 
 import Signin from "./Signin";
+import ForgotPassword from "./ForgotPassword";
 import "./Login.css";
 
 export default function Connexion() {
@@ -19,7 +20,7 @@ export default function Connexion() {
         e.preventDefault();
         firebase.auth().signInWithEmailAndPassword(userID, userPassword)
         .then((user) => {
-          console.log(user)
+          <Redirect to="/Home" />
         })
         .catch((error) => {
           setError(error.message);
@@ -36,7 +37,8 @@ export default function Connexion() {
             </form>
             <div className="message">{error}</div>
             <Router>
-              <Link to="/Signin" component={Signin}>Pas inscrit ?</Link>
+              <Link to="/Signin" >Pas inscrit ?</Link>
+              <Link to="/ForgotPassword">Mot de passe oublié ?</Link>
             </Router>
         </div>
     )
