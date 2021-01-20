@@ -1,0 +1,9 @@
+.signin form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.signin form input {
+    margin-bottom: 10px;
+    padding: 5px 10px;
+}

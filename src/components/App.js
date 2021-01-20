@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 
 import Home from "../pages/Home/Home"
 import Profile from "../pages/Profile/Profile"
-import Login from "./Authentication/Login"
+import Authentication from "./Authentication/Authentication"
 import Logout from "./Authentication/Logout"
 import { AuthContext } from "./Authentication/Auth";
 
@@ -33,7 +33,7 @@ function App() {
             </Switch>
           </Router> 
         : 
-        <Login />
+        <Authentication />
       }
 
       <Attribution />
