@@ -26,16 +26,28 @@ export default function Signin() {
             }
         }
         if(userInfo.password === userInfo.checkPassword) {
+
             firebase.auth().createUserWithEmailAndPassword(userInfo.email, userInfo.password)
             .then((user) => {
-                console.log(user);
+
+                const ref = firestore.collection("lists").doc();
+                const id = ref.id;
+
                 firestore.collection("users").add({
                     firstName: userInfo.firstName,
                     lastName: userInfo.lastName,
                     email: userInfo.email,
                     password: userInfo.password,
+                    idLists: id,
                     id: user.user.uid
                 })
+
+                firestore.collection("lists").doc(id).set({
+                    watchedList: [],
+                    topTen: [],
+                    stats: []
+                })
+
             })
             .catch((error) => {
                 console.log(error);
