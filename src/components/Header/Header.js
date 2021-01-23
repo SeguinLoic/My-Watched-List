@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./Header.css";
+import { AuthContext } from "../Authentication/Auth";
 
 export default function Header({ setResult }) {
 
     const API_KEY = process.env.REACT_APP_API_KEY;
     const [search, setSearch] = useState("");
+    const { userData } = useContext(AuthContext);
 
     const handleSearch = async (e) => {
         e.preventDefault();
@@ -16,7 +18,7 @@ export default function Header({ setResult }) {
 
     return (
         <header className="header">
-            <h1>My Watched List</h1>
+            <h1>Hello { userData.firstName }</h1>
             <form onSubmit={handleSearch}>
                 <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} />
                 <button>Search</button>

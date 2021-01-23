@@ -11,32 +11,36 @@ export const AuthProvider = ({ children }) => {
 
     useEffect(() => {
         auth.onAuthStateChanged(user => {
-            if (user != null) {
+            if (!!user) {
                 const id = user.uid;
                 getUserData(id);
             }
             setCurrentUser(user);
-            console.log(userData);
         })
     }, [])
 
-
-
     const getUserData = async (id) => {
-        await db.collection("users").where("id", "==", id)
+        await db.collection("users").doc(id)
         .get()
-        .then(function(querySnapshot) {
-            querySnapshot.forEach(function(doc) {
+        .then(function(doc) {
+            if (doc.exists) {
                 console.log(doc.data());
-                setUserData({ firstName: doc.data().firstName, lastName: doc.data().lastName });
-            });
+                const data = doc.data();
+                setUserData({ 
+                    firstName: data.firstName, 
+                    lastName: data.lastName, 
+                    email: data.email, 
+                    lists: data.lists, 
+                    stats: data.stats 
+                });
+            } else {
+                console.log("No such document!");
+            }
         })
         .catch(function(error) {
             console.log("Error getting documents: ", error);
         });
     }
-
-
 
     return (
         <AuthContext.Provider value={{ currentUser, userData }}>

@@ -1,16 +1,20 @@
 import React, { useState } from "react";
 import firebase from "firebase/app";
 import { db } from "../Firebase/firebase";
+import { useHistory } from "react-router-dom";
 import "./Signin.css"
 
 export default function Signin() {
 
+    const history = useHistory();
     const [errorMessage, setErrorMessage] = useState('');
     const [userInfo, setUserInfo] = useState({
         firstName: "",
         lastName: "",
         email: "",
-        password: ""
+        password: "",
+        lists: {},
+        stats: []
     })
 
     const handleChange = (e) => {
@@ -20,38 +24,30 @@ export default function Signin() {
 
     const createAccount = (e) => {
         e.preventDefault();
+        
         for(let value in userInfo) {
             if (userInfo[value] === "") {
                 return setErrorMessage("Veuillez remplir tous les champs");
             }
         }
+
         if(userInfo.password === userInfo.checkPassword) {
 
             firebase.auth().createUserWithEmailAndPassword(userInfo.email, userInfo.password)
             .then((user) => {
-
-                const ref = db.collection("lists").doc();
-                const id = ref.id;
-
-                db.collection("users").add({
+                db.collection("users").doc(user.user.uid).set({
                     firstName: userInfo.firstName,
                     lastName: userInfo.lastName,
                     email: userInfo.email,
-                    password: userInfo.password,
-                    idLists: id,
-                    id: user.user.uid
+                    lists: userInfo.lists,
+                    stats: userInfo.stats
                 })
-
-                db.collection("lists").doc(id).set({
-                    watchedList: [],
-                    topTen: [],
-                    stats: []
-                })
-
+                history.push("/Home");
             })
             .catch((error) => {
                 console.log(error);
             })
+
         } else {
             setErrorMessage("Les mots de passes ne sont pas identiques");
         }

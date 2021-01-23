@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import firebase from "firebase/app";
-import { Redirect } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 import "./Login.css";
 
@@ -8,6 +8,7 @@ export default function Login() {
 
     const [userInfo, setUserInfo] = useState({userID: "", userPassword: ""});
     const [error, setError] = useState("");
+    const history = useHistory();
 
     const handleChange = (e) => {
         const value = e.target.value;
@@ -17,11 +18,12 @@ export default function Login() {
     const userConnexion = (userID, userPassword, e) => {
         e.preventDefault();
         firebase.auth().signInWithEmailAndPassword(userID, userPassword)
-        .then((user) => {
-            <Redirect to="/Home" />
+        .then(() => {
+            setUserInfo({userID: "", userPassword: ""});
+            history.push("/Home");
         })
         .catch((error) => {
-          setError(error.message);
+            setError(error.message);
         });
     }
 

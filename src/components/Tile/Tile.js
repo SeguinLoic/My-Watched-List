@@ -13,5 +13,3 @@ export default function Tile({ mediaInfo, addList }) {
         </div>
     )
 }
-
-//onClick={() => setMyList([...myList, {res, note: ""}])}

@@ -1,11 +1,13 @@
-import React, { useState } from "react"; 
+import React, { useState, useContext } from "react"; 
 
 import Header from "../../components/Header/Header";
 import Trending from "./Trending/Trending"
 import Tile from "../../components/Tile/Tile"
+import { AuthContext } from "../../components/Authentication/Auth";
 
 export default function Home() {
 
+    const { userData } = useContext(AuthContext);
     const [result, setResult] = useState([]);
 
     return (
