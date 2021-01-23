@@ -42,6 +42,7 @@ export default function Signin() {
                     lists: userInfo.lists,
                     stats: userInfo.stats
                 })
+                setUserInfo({firstName: "", lastName: "", email: "", password: "", lists: {}, stats: []});
                 history.push("/Home");
             })
             .catch((error) => {
