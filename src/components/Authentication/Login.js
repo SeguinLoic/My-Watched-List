@@ -18,7 +18,7 @@ export default function Login() {
         e.preventDefault();
         firebase.auth().signInWithEmailAndPassword(userID, userPassword)
         .then((user) => {
-          <Redirect to="/Home" />
+            <Redirect to="/Home" />
         })
         .catch((error) => {
           setError(error.message);

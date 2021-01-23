@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import firebase from "firebase/app";
-import { firestore } from "../Firebase/firebase";
+import { db } from "../Firebase/firebase";
 import "./Signin.css"
 
 export default function Signin() {
@@ -30,10 +30,10 @@ export default function Signin() {
             firebase.auth().createUserWithEmailAndPassword(userInfo.email, userInfo.password)
             .then((user) => {
 
-                const ref = firestore.collection("lists").doc();
+                const ref = db.collection("lists").doc();
                 const id = ref.id;
 
-                firestore.collection("users").add({
+                db.collection("users").add({
                     firstName: userInfo.firstName,
                     lastName: userInfo.lastName,
                     email: userInfo.email,
@@ -42,7 +42,7 @@ export default function Signin() {
                     id: user.user.uid
                 })
 
-                firestore.collection("lists").doc(id).set({
+                db.collection("lists").doc(id).set({
                     watchedList: [],
                     topTen: [],
                     stats: []
