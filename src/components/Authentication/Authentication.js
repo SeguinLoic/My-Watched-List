@@ -1,9 +1,11 @@
 import React from "react";
-import { BrowserRouter as Router, Link, Switch, Route, Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 
 import Signin from "./Signin";
 import Login from "./Login";
 import ForgotPassword from "./ForgotPassword";
+
+import LogNavigation from "../Navigation/LogNavigation"
 
 export default function Authentication() {
 
@@ -19,11 +21,9 @@ export default function Authentication() {
                 <Route exact path="/ForgotPassword" component={ForgotPassword}/>
               </Switch>
 
-              <Link to="/Login">Déjà membre ?</Link>
-              <Link to="/Signin" >Pas inscrit ?</Link>
-              <Link to="/ForgotPassword">Mot de passe oublié ?</Link>
+              <LogNavigation />
 
-            </Router>
+            </Router> 
         </div>
     )
 }
