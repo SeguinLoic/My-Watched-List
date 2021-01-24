@@ -5,7 +5,8 @@ import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import Home from "../pages/Home/Home"
 import Profile from "../pages/Profile/Profile"
 import Authentication from "./Authentication/Authentication"
-import Logout from "./Authentication/Logout"
+import Logout from "./Authentication/Logout";
+import AppNavigation from "./Navigation/AppNavigation";
 import { AuthContext } from "./Authentication/Auth";
 
 import Attribution from "./Attribution/Attribution";
@@ -21,11 +22,7 @@ function App() {
         currentUser 
         ?
           <Router>
-            <nav>
-              <Link to="/Home">Home</Link>
-              <Link to="/Profile">Profile</Link>
-              <Logout />
-            </nav>
+            <AppNavigation />
             <Switch>
               <Route exact path="/Home" component={Home}/>
               <Route exact path="/Profile" component={Profile}/>
