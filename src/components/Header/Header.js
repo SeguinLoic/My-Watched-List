@@ -1,31 +1,17 @@
-import React, { useState, useContext } from "react";
-import "./Header.css";
+import React, { useContext } from "react";
 import { AuthContext } from "../Authentication/Auth";
-
 import AppNavigation from "../Navigation/AppNavigation";
 
-export default function Header({ setResult }) {
+import "./Header.css";
 
-    const API_KEY = process.env.REACT_APP_API_KEY;
-    const [search, setSearch] = useState("");
+export default function Header() {
+
     const { userData } = useContext(AuthContext);
-
-    const handleSearch = async (e) => {
-        e.preventDefault();
-        const response = await fetch(`https://api.themoviedb.org/3/search/tv?api_key=${API_KEY}&query=${search}`);
-        const myJSON = await response.json();
-        setResult(myJSON.results);
-        setSearch("");
-    }
 
     return (
         <header className="header">
             <h1>Hello { userData.firstName }</h1>
             <AppNavigation />
-            <form onSubmit={handleSearch}>
-                <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} />
-                <button>Search</button>
-            </form>
         </header>
     )
 }
