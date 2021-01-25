@@ -1,17 +1,13 @@
-import React, { useContext } from "react";
+import React from "react";
 
-import { AuthContext } from "../Authentication/Auth";
-
-export default function Tile({ mediaInfo, addList }) {
-
-    const { userData } = useContext(AuthContext);
+export default function Tile({ mediaInfo, inLists }) {
 
     return (
         <div className="tile">
             <img src={`https://image.tmdb.org/t/p/w500${mediaInfo.poster_path}`} alt="hey"/>
             <span className="name">{mediaInfo.original_name}</span>
             {
-                addList 
+                !inLists
                 ? <button>Ajouter à ma liste</button>
                 : ""
             }

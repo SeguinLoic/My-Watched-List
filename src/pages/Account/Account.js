@@ -1,11 +1,11 @@
 import React from "react";
 import Header from "../../components/Header/Header";
 
-export default function Stats() {
+export default function Account() {
     return (
-        <div className="stats">
+        <div className="staccountats">
             <Header />
-            <h2>Mes statistiques</h2>
+            <h2>Gestion du compte</h2>
         </div>
     )
 }

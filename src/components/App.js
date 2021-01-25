@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-d
 
 import Home from "../pages/Home/Home"
 import Profile from "../pages/Profile/Profile"
-import Stats from "../pages/Stats/Stats"
+import Account from "../pages/Account/Account"
 import Authentication from "./Authentication/Authentication"
 import Logout from "./Authentication/Logout";
 import { AuthContext } from "./Authentication/Auth";
@@ -26,7 +26,7 @@ function App() {
             <Switch>
               <Route exact path="/Home" component={Home}/>
               <Route exact path="/Profile" component={Profile}/>
-              <Route exact path="/Stats" component={Stats}/>
+              <Route exact path="/Account" component={Account}/>
               <Route exact path="/logout" component={Logout}/>
             </Switch>
           </Router> 

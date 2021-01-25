@@ -21,7 +21,7 @@ export default function Profile() {
 
             <Header />
 
-            <h2>Mon top</h2>
+            <h2>Séries en cours</h2>
             <div className="monTop">
                 {
 
@@ -42,6 +42,11 @@ export default function Profile() {
                     </>
                 }
             </div>
+
+            <h2>Séries regardées</h2>
+
+            <h2>Mes stats</h2>
+
         </div>
     )
 }

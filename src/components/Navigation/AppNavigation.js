@@ -16,7 +16,7 @@ export default function AppNavigation() {
         <div className="appNavigation">
             <Link to="/Home" className={ currentLocation === "/Home" ? "active" : ""}>Home</Link>
             <Link to="/Profile" className={ currentLocation === "/Profile" ? "active" : ""}>Profile</Link>
-            <Link to="/Stats" className={ currentLocation === "/Stats" ? "active" : ""}>Stats</Link>
+            <Link to="/Account" className={ currentLocation === "/Account" ? "active" : ""}>Account</Link>
             <Logout />
         </div>
     )
