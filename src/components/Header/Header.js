@@ -2,6 +2,8 @@ import React, { useState, useContext } from "react";
 import "./Header.css";
 import { AuthContext } from "../Authentication/Auth";
 
+import AppNavigation from "../Navigation/AppNavigation";
+
 export default function Header({ setResult }) {
 
     const API_KEY = process.env.REACT_APP_API_KEY;
@@ -19,6 +21,7 @@ export default function Header({ setResult }) {
     return (
         <header className="header">
             <h1>Hello { userData.firstName }</h1>
+            <AppNavigation />
             <form onSubmit={handleSearch}>
                 <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} />
                 <button>Search</button>

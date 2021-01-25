@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import Header from "../../components/Header/Header";
+
 import dame from "../../assets/dame.jpg"
 import mandalorian from "../../assets/mandalorian.jpg"
 import umbrella from "../../assets/umbrella.jpg"
@@ -10,6 +12,9 @@ export default function Profile() {
 
     return (
         <div>
+
+            <Header />
+
             <h2>Mon top</h2>
             <div className="monTop">
                 {
