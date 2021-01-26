@@ -1,6 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
+import firebase from "firebase/app";
+import { db } from "../Firebase/firebase";
+import { AuthContext } from "../Authentication/Auth";
+
 
 export default function Tile({ mediaInfo, inLists }) {
+
+    const { userData, currentUser } = useContext(AuthContext);
+
+    const addToList = async (e) => {
+        e.preventDefault();
+        const userLists = db.collection("users").doc(currentUser.uid);
+        return userLists.update({
+            "lists.currentSeries": mediaInfo
+        })
+    }
 
     return (
         <div className="tile">
@@ -8,7 +22,7 @@ export default function Tile({ mediaInfo, inLists }) {
             <span className="name">{mediaInfo.original_name}</span>
             {
                 !inLists
-                ? <button>Ajouter à ma liste</button>
+                ? <button onClick={(e) => addToList(e)}>Ajouter à ma liste</button>
                 : ""
             }
         </div>

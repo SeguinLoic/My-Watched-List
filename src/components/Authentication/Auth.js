@@ -24,7 +24,6 @@ export const AuthProvider = ({ children }) => {
         .get()
         .then(function(doc) {
             if (doc.exists) {
-                console.log(doc.data());
                 const data = doc.data();
                 setUserData({ 
                     firstName: data.firstName, 
