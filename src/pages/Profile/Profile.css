@@ -1,0 +1,14 @@
+.currentSeries {
+    display: flex;
+}
+.serie {
+    display: flex;
+    flex-direction: column;
+}
+.serie:not(:last-child) {
+    margin-right: 25px;
+}
+.serie img {
+    width: 175px;
+    margin-bottom: 10px;
+}

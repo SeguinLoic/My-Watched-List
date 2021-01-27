@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import firebase from "firebase/app";
 import { db } from "../Firebase/firebase";
 import { AuthContext } from "../Authentication/Auth";
 
@@ -10,9 +9,10 @@ export default function Tile({ mediaInfo, inLists }) {
 
     const addToList = async (e) => {
         e.preventDefault();
-        const userLists = db.collection("users").doc(currentUser.uid);
+        userData.lists.currentSeries.push(mediaInfo);
+        const userLists = await db.collection("users").doc(currentUser.uid);
         return userLists.update({
-            "lists.currentSeries": mediaInfo
+            "lists.currentSeries": userData.lists.currentSeries
         })
     }
 

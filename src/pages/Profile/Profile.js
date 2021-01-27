@@ -4,18 +4,17 @@ import { AuthContext } from "../../components/Authentication/Auth";
 import Header from "../../components/Header/Header";
 import SearchBar from "../../components/SearchBar/SearchBar"
 
-import dame from "../../assets/dame.jpg"
-import mandalorian from "../../assets/mandalorian.jpg"
-import umbrella from "../../assets/umbrella.jpg"
+import "./Profile.css";
 
 export default function Profile() {
 
     const { userData } = useContext(AuthContext);
-    const [myList, setMyList] = useState([]);
+    const [currentSeries, setCurrentSeries] = useState([]);
+    const [watchedSeries, setWatchedSeries] = useState([]);
 
     useEffect(() => {
-        setMyList(userData.lists.watched);
-    }, [])
+        setCurrentSeries(userData.lists.currentSeries);
+    }, [userData.lists])
 
     return (
         <div>
@@ -24,12 +23,18 @@ export default function Profile() {
             <SearchBar />
 
             <h2>Séries en cours</h2>
-            <div className="monTop">
-                <>
-                    <img src={dame} alt="dame"/>
-                    <img src={mandalorian} alt="mandalorian"/>
-                    <img src={umbrella} alt="umbrella"/>
-                </>
+            <div className="currentSeries">
+                {
+                    currentSeries.map(serie => {
+                        return (
+                            <div className="serie">
+                                <img src={`https://image.tmdb.org/t/p/w500${serie.poster_path}`} alt="hey"/>
+                                <span className="name">{serie.name}</span>
+                                <button>Treminée</button>
+                            </div>
+                        )
+                    })
+                }
             </div>
 
             <h2>Séries regardées</h2>

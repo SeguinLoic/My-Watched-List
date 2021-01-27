@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Tile from "../Tile/Tile"
+import Tiles from "../Tiles/Tiles"
 
 export default function SearchBar() {
     
@@ -32,7 +32,7 @@ export default function SearchBar() {
                         <h2>Ma recherche</h2>
                         <div className="result">
                             {
-                            result.map( mediaInfo => <Tile mediaInfo={mediaInfo} /> )
+                            result.map( mediaInfo => <Tiles mediaInfo={mediaInfo} /> )
                             } 
                         </div>
                     </div>

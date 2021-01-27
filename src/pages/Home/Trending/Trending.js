@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import Tile from "../../../components/Tile/Tile"
+import Tiles from "../../../components/Tiles/Tiles"
 
 export default function Trending() {
 
@@ -22,7 +22,7 @@ export default function Trending() {
             <h2>Les dernières sorties</h2>
             <div className="sorties">
                 {
-                    topTrends.map(mediaInfo => <Tile mediaInfo={mediaInfo} addList /> )
+                    topTrends.map(mediaInfo => <Tiles mediaInfo={mediaInfo} addList /> )
                 }
             </div>
         </div>
