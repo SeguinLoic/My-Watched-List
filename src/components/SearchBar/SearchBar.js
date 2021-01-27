@@ -25,20 +25,20 @@ export default function SearchBar() {
                 <button>Search</button>
             </form>
 
-            {
-                result.length 
-                ? 
-                    <div className="blocSearch">
-                        <h2>Ma recherche</h2>
-                        <div className="result">
-                            {
-                            result.map( mediaInfo => <Tiles mediaInfo={mediaInfo} /> )
-                            } 
+            <div className="searchResult">
+                {
+                    result.length 
+                    ? 
+                        <div className="blocSearch">
+                            <h2>Ma recherche</h2>
+                            <div className="result">
+                                { result.map( mediaInfo => <Tiles mediaInfo={mediaInfo} addInCurrent addInWatched /> ) } 
+                            </div>
                         </div>
-                    </div>
-                : 
-                    ""
+                    : 
+                        ""
                 }
+            </div>
 
         </div>
         

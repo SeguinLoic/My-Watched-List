@@ -21,9 +21,7 @@ export default function Trending() {
         <div>
             <h2>Les dernières sorties</h2>
             <div className="sorties">
-                {
-                    topTrends.map(mediaInfo => <Tiles mediaInfo={mediaInfo} addList /> )
-                }
+                { topTrends.map(mediaInfo => <Tiles mediaInfo={mediaInfo} addInCurrent addInWatched /> ) }
             </div>
         </div>
     )
