@@ -13,7 +13,10 @@ export default function Signin() {
         lastName: "",
         email: "",
         password: "",
-        lists: {},
+        lists: {
+            currentSeries: [],
+            watchedSeries: []
+        },
         stats: []
     })
 
@@ -42,7 +45,14 @@ export default function Signin() {
                     lists: userInfo.lists,
                     stats: userInfo.stats
                 })
-                setUserInfo({firstName: "", lastName: "", email: "", password: "", lists: {}, stats: []});
+                setUserInfo({
+                    firstName: "", 
+                    lastName: "", 
+                    email: "", 
+                    password: "", 
+                    lists: {currentSeries: [], watchedSeries: []}, 
+                    stats: []
+                });
                 history.push("/Home");
             })
             .catch((error) => {

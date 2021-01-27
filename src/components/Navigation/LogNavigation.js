@@ -9,7 +9,6 @@ export default function LogNavigation() {
     const [currentLocation, setCurrentLocation] = useState("");
 
     useEffect(() => {
-        console.log(location.pathname);
         setCurrentLocation(location.pathname);
     }, [location.pathname])
 

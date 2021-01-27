@@ -20,11 +20,8 @@ export default function Tile({ mediaInfo, addInCurrent, addInWatched }) {
         <div className="tile">
             <img src={`https://image.tmdb.org/t/p/w500${mediaInfo.poster_path}`} alt="hey"/>
             <span className="name">{mediaInfo.original_name}</span>
-            {
-                !addInCurrent
-                ? <button onClick={(e) => addToList(e)}>Ajouter à ma liste</button>
-                : ""
-            }
+            { addInCurrent ? <button onClick={(e) => addToList(e)}>En cours de visionnage</button> : "" }
+            { addInWatched ? <button onClick={(e) => addToList(e)}>Série vue en entier</button> : "" }
         </div>
     )
 }
