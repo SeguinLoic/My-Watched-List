@@ -1,14 +1,14 @@
-.currentSeries {
+.currentSeries, .watchedSeries {
     display: flex;
 }
-.serie {
+.currentSeries .tile, .watchedSeries .tile {
     display: flex;
     flex-direction: column;
 }
-.serie:not(:last-child) {
+.currentSeries .tile:not(:last-child), .watchedSeries .tile:not(:last-child)  {
     margin-right: 25px;
 }
-.serie img {
+.currentSeries .tile img, .watchedSeries .tile img {
     width: 175px;
     margin-bottom: 10px;
 }

@@ -6,10 +6,9 @@ import Home from "../pages/Home/Home"
 import Profile from "../pages/Profile/Profile"
 import Account from "../pages/Account/Account"
 import Authentication from "./Authentication/Authentication"
-import Logout from "./Authentication/Logout";
-import { AuthContext } from "./Authentication/Auth";
-
 import Attribution from "./Attribution/Attribution";
+
+import { AuthContext } from "./Authentication/Auth";
 
 function App() {
 
@@ -27,7 +26,6 @@ function App() {
               <Route exact path="/Home" component={Home}/>
               <Route exact path="/Profile" component={Profile}/>
               <Route exact path="/Account" component={Account}/>
-              <Route exact path="/logout" component={Logout}/>
             </Switch>
           </Router> 
         : 

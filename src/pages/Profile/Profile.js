@@ -15,7 +15,7 @@ export default function Profile() {
 
     useEffect(() => {
         setCurrentSeries(userData.lists.currentSeries);
-        console.log(currentSeries.length);
+        setWatchedSeries(userData.lists.watchedSeries);
     }, [userData.lists])
 
     return (
@@ -25,11 +25,14 @@ export default function Profile() {
             <SearchBar />
 
             <h2>Séries en cours</h2>
-            <div className="result">
+            <div className="currentSeries">
                 { currentSeries ? (currentSeries.map(mediaInfo => <Tiles mediaInfo={mediaInfo} addInWatched />)) : "" }
             </div>
 
             <h2>Séries regardées</h2>
+            <div className="watchedSeries">
+                { watchedSeries ? (watchedSeries.map(mediaInfo => <Tiles mediaInfo={mediaInfo} />)) : "" }
+            </div>
 
             <h2>Mes stats</h2>
 
