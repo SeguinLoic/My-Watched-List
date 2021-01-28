@@ -3,13 +3,18 @@ import { db } from "../Firebase/firebase";
 import { AuthContext } from "../Authentication/Auth";
 
 
-export default function Tile({ mediaInfo, addInCurrent, addInWatched }) {
+export default function Tile({ serie, addInCurrent, addInWatched }) {
 
-    const { userData, currentUser } = useContext(AuthContext);
+    const { userData, currentUser, setUserData } = useContext(AuthContext);
 
     const addToCurrentList = async (e) => {
         e.preventDefault();
-        userData.lists.currentSeries.push(mediaInfo);
+
+        const currentList = userData.lists.currentSeries;
+        currentList.push(serie);
+
+        setUserData({...userData, "lists.currentSeries": currentList});
+        
         const userLists = await db.collection("users").doc(currentUser.uid);
         return userLists.update({
             "lists.currentSeries": userData.lists.currentSeries
@@ -18,11 +23,20 @@ export default function Tile({ mediaInfo, addInCurrent, addInWatched }) {
 
     const addToWatchedList = async (e) => {
         e.preventDefault();
-        const indexCurrentSerie = userData.lists.currentSeries.indexOf(mediaInfo);
+
+        const currentList = userData.lists.currentSeries;
+        const indexCurrentSerie = currentList.indexOf(serie);
+
         if (indexCurrentSerie !== -1) {
-            userData.lists.currentSeries.splice(indexCurrentSerie, 1);
+            currentList.splice(indexCurrentSerie, 1);
+            setUserData({...userData, "lists.currentSeries": currentList});
         }
-        userData.lists.watchedSeries.push(mediaInfo);
+
+        const watchedList = userData.lists.watchedSeries;
+        watchedList.push(serie);
+
+        setUserData({...userData, "lists.watchedSeries": watchedList});
+
         const userLists = await db.collection("users").doc(currentUser.uid);
         return userLists.update({
             "lists.currentSeries": userData.lists.currentSeries,
@@ -32,8 +46,8 @@ export default function Tile({ mediaInfo, addInCurrent, addInWatched }) {
 
     return (
         <div className="tile">
-            <img src={`https://image.tmdb.org/t/p/w500${mediaInfo.poster_path}`} alt="hey"/>
-            <span className="name">{mediaInfo.original_name}</span>
+            <img src={`https://image.tmdb.org/t/p/w500${serie.poster_path}`} alt="hey"/>
+            <span className="name">{serie.original_name}</span>
             { addInCurrent ? <button onClick={(e) => addToCurrentList(e)}>En cours de visionnage</button> : "" }
             { addInWatched ? <button onClick={(e) => addToWatchedList(e)}>Série vue en entier</button> : "" }
         </div>
