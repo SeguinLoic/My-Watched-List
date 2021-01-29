@@ -32,7 +32,7 @@ export default function SearchBar() {
                         <div className="blocSearch">
                             <h2>Ma recherche</h2>
                             <div className="result">
-                                { result.map( mediaInfo => <Tiles mediaInfo={mediaInfo} addInCurrent addInWatched /> ) } 
+                                { result.map( serie => <Tiles serie={serie} /> ) } 
                             </div>
                         </div>
                     : 

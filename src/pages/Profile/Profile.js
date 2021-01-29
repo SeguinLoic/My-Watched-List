@@ -27,7 +27,7 @@ export default function Profile() {
 
             <h2>Séries en cours</h2>
             <div className="currentSeries">
-                { currentSeries ? (currentSeries.map(serie => <Tiles serie={serie} addInWatched />)) : "" }
+                { currentSeries ? (currentSeries.map(serie => <Tiles serie={serie} />)) : "" }
             </div>
 
             <h2>Séries regardées</h2>
