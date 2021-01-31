@@ -8,20 +8,20 @@ export const AuthProvider = ({ children }) => {
 
     const [currentUser, setCurrentUser] = useState(null);
     const [userData, setUserData] = useState({});
-
+    const [currentSeries, setCurrentSeries] = useState([]);
+    const [watchedSeries, setWatchedSeries] = useState([]);
+ 
     useEffect(() => {
         auth.onAuthStateChanged(user => {
-            if (!!user) {
-                const id = user.uid;
-                getUserData(id);
+            if(user) {
+                getUserData(user.uid);
             }
             setCurrentUser(user);
         })
     }, [])
 
     const getUserData = async (id) => {
-        await db.collection("users").doc(id)
-        .get()
+        await db.collection("users").doc(id).get()
         .then(function(doc) {
             if (doc.exists) {
                 const data = doc.data();
@@ -29,9 +29,10 @@ export const AuthProvider = ({ children }) => {
                     firstName: data.firstName, 
                     lastName: data.lastName, 
                     email: data.email, 
-                    lists: data.lists, 
-                    stats: data.stats 
-                });
+                    stats: data.stats
+                })
+                setCurrentSeries(data.lists.currentSeries);
+                setWatchedSeries(data.lists.watchedSeries);
             } else {
                 console.log("No such document!");
             }
@@ -42,7 +43,7 @@ export const AuthProvider = ({ children }) => {
     }
 
     return (
-        <AuthContext.Provider value={{ currentUser, userData, setUserData }}>
+        <AuthContext.Provider value={{ currentUser, userData, currentSeries, setCurrentSeries, watchedSeries, setWatchedSeries }}>
             {children}
         </AuthContext.Provider>
     )

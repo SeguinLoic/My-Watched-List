@@ -1,5 +1,6 @@
 .currentSeries, .watchedSeries {
     display: flex;
+    overflow-x: scroll;
 }
 .currentSeries .tile, .watchedSeries .tile {
     display: flex;

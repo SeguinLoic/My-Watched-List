@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
-import { AuthContext } from "../Authentication/Auth";
 import AppNavigation from "../Navigation/AppNavigation";
+
+import { AuthContext } from "../Authentication/Auth";
 
 import "./Header.css";
 

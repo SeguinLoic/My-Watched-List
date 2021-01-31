@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-
-import Tiles from "../../../components/Tiles/Tiles"
+import List from "../../../components/List/List"
 
 export default function Trending() {
 
@@ -20,9 +19,7 @@ export default function Trending() {
     return (
         <div>
             <h2>Les dernières sorties</h2>
-            <div className="sorties">
-                { topTrends.map(serie => <Tiles serie={serie} /> ) }
-            </div>
+            <List list={topTrends} />
         </div>
     )
 }
