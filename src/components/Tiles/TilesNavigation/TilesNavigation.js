@@ -7,38 +7,39 @@ export default function TilesNavigation({ serie }) {
     const { currentSeries, setCurrentSeries } = useContext(AuthContext);
     const { watchedSeries, setWatchedSeries } = useContext(AuthContext);
 
+    const indexCurrent = currentSeries.indexOf(serie);
+    const indexWatched = watchedSeries.indexOf(serie);
+
     const addToCurrentList = (e) => {
         e.preventDefault();
         setCurrentSeries([...currentSeries, serie]);
+
+        console.log(indexCurrent);
+
     } 
 
     const addToWatchedList = (e) => {
         e.preventDefault();
+        const current = currentSeries;
+        const indexCurrent = current.indexOf(serie);
+        if (indexCurrent !== -1) {
+            current.splice(indexCurrent, 1);
+            setCurrentSeries(current);
+        }
         setWatchedSeries([...watchedSeries, serie]);
     } 
 
     /*const addToCurrentList = async (e) => {
-        e.preventDefault();
-
         const dbUserLists = await db.collection("users").doc(currentUser.uid);
-
-        const newUserLists = userLists;
-        newUserLists.currentSeries.push(serie);
-
-        setUserLists(newUserLists);
-
         return dbUserLists.update({
             "lists.currentSeries": userLists.currentSeries
         })
     }*/
 
     /* const addToWatchedList = async (e) => {
-        e.preventDefault();
-
         const dbUserLists = await db.collection("users").doc(currentUser.uid);
         const userDataLists = userData.lists;
         const lists = userLists;
-        console.log(lists);
         const indexCurrentSerie = userDataLists.currentSeries.indexOf(serie);
         const indexCurrentSerie = lists.currentSeries.indexOf(serie);
 
@@ -51,11 +52,6 @@ export default function TilesNavigation({ serie }) {
         lists.watchedSeries.push(serie);
         setUserData({...userData, lists: userDataLists});
         setUserLists(lists);
-
-        return userLists.update({
-            "lists.currentSeries": userData.lists.currentSeries,
-            "lists.watchedSeries": userData.lists.watchedSeries
-        })
 
         return dbUserLists.update({
             "lists.currentSeries": userLists.currentSeries,
