@@ -1,6 +1,8 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { db } from "../../Firebase/firebase";
 import { AuthContext } from "../../Authentication/Auth";
+
+import "./TilesNavigation.css";
 
 export default function TilesNavigation({ serie }) {
 
@@ -13,15 +15,11 @@ export default function TilesNavigation({ serie }) {
     const addToCurrentList = (e) => {
         e.preventDefault();
         setCurrentSeries([...currentSeries, serie]);
-
-        console.log(indexCurrent);
-
     } 
 
     const addToWatchedList = (e) => {
         e.preventDefault();
         const current = currentSeries;
-        const indexCurrent = current.indexOf(serie);
         if (indexCurrent !== -1) {
             current.splice(indexCurrent, 1);
             setCurrentSeries(current);
@@ -61,8 +59,8 @@ export default function TilesNavigation({ serie }) {
 
     return (
         <div className="tilesNavigation">
-            <button onClick={addToCurrentList}>En cours de visionnage</button>
-            <button onClick={addToWatchedList}>Vu en entier</button>
+            <button onClick={addToCurrentList} className={ indexCurrent !== -1 ? "hide" : "" } >En cours de visionnage</button>
+            <button onClick={addToWatchedList} className={ indexWatched !== -1 ? "hide" : "" }>Vu en entier</button>
         </div>
     )
 }
