@@ -14,6 +14,8 @@ export default function Trending() {
 
     useEffect(() => {
         checkTrends();
+        console.log(topTrends);
+        console.log("Trends");
     }, [])
 
     return (

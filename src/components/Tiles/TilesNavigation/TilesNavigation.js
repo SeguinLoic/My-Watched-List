@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { db } from "../../Firebase/firebase";
 import { AuthContext } from "../../Authentication/Auth";
 
@@ -6,56 +6,55 @@ import "./TilesNavigation.css";
 
 export default function TilesNavigation({ serie }) {
 
-    const { currentSeries, setCurrentSeries } = useContext(AuthContext);
+    const { currentSeries, setCurrentSeries, currentUser } = useContext(AuthContext);
     const { watchedSeries, setWatchedSeries } = useContext(AuthContext);
 
     const indexCurrent = currentSeries.indexOf(serie);
     const indexWatched = watchedSeries.indexOf(serie);
 
-    const addToCurrentList = (e) => {
+    const id = currentUser.uid;
+
+    const addToCurrentList = async (e) => {
         e.preventDefault();
-        setCurrentSeries([...currentSeries, serie]);
+        const current = currentSeries;
+        current.push(serie);
+        setCurrentSeries([...current]);
+        addToDB(current);
     } 
 
     const addToWatchedList = (e) => {
         e.preventDefault();
         const current = currentSeries;
+        const watched = watchedSeries;
+        watched.push(serie);
         if (indexCurrent !== -1) {
             current.splice(indexCurrent, 1);
             setCurrentSeries(current);
         }
-        setWatchedSeries([...watchedSeries, serie]);
+        setWatchedSeries([...watched]);
+        addToDB(current, watched)
     } 
 
-    /*const addToCurrentList = async (e) => {
-        const dbUserLists = await db.collection("users").doc(currentUser.uid);
-        return dbUserLists.update({
-            "lists.currentSeries": userLists.currentSeries
-        })
-    }*/
-
-    /* const addToWatchedList = async (e) => {
-        const dbUserLists = await db.collection("users").doc(currentUser.uid);
-        const userDataLists = userData.lists;
-        const lists = userLists;
-        const indexCurrentSerie = userDataLists.currentSeries.indexOf(serie);
-        const indexCurrentSerie = lists.currentSeries.indexOf(serie);
-
-        if (indexCurrentSerie !== -1) {
-            userDataLists.currentSeries.splice(indexCurrentSerie, 1);
-            lists.currentSeries.splice(indexCurrentSerie, 1);
+    const addToDB = async (...lists) => {
+        const current = lists[0];
+        const watched = lists[1];
+        const userLists = await db.collection("users").doc(id);
+        
+        if (current && watched) {
+            return userLists.update({
+                "lists.currentSeries": current,
+                "lists.watchedSeries": watched
+            })
+        } else if (current) {      
+            return userLists.update({
+                "lists.currentSeries": current
+            })
+        } else if (watched) {
+            return userLists.update({
+                "lists.watchedSeries": watched
+            })
         }
-
-        userDataLists.watchedSeries.push(serie);
-        lists.watchedSeries.push(serie);
-        setUserData({...userData, lists: userDataLists});
-        setUserLists(lists);
-
-        return dbUserLists.update({
-            "lists.currentSeries": userLists.currentSeries,
-            "lists.watchedSeries": userLists.watchedSeries
-        })
-    }*/
+    }
 
     return (
         <div className="tilesNavigation">
