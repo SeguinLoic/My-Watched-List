@@ -14,9 +14,9 @@ export default function LogNavigation() {
 
     return (
         <div className="logNavigation">
-                <Link to="/Login" className={currentLocation === "/Login" ? "hide" : ""}>Déjà membre ?</Link>
-                <Link to="/Signin" className={currentLocation === "/Signin" ? "hide" : ""}>Pas inscrit ?</Link>
-                <Link to="/ForgotPassword" className={currentLocation === "/ForgotPassword" ? "hide" : ""}>Mot de passe oublié ?</Link>
+            <Link to="/Login" className={currentLocation === "/Login" ? "hide" : ""}>Déjà membre ?</Link>
+            <Link to="/Signin" className={currentLocation === "/Signin" ? "hide" : ""}>Pas inscrit ?</Link>
+            <Link to="/ForgotPassword" className={currentLocation === "/ForgotPassword" ? "hide" : ""}>Mot de passe oublié ?</Link>
         </div>
     )
 }
