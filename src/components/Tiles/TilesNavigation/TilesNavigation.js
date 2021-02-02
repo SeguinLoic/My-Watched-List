@@ -10,8 +10,8 @@ export default function TilesNavigation({ serie }) {
 
     const indexCurrent = currentSeries.indexOf(serie);
     //const indexWatched = watchedSeries.indexOf(serie);
-    const idCurrent = currentSeries.filter(elem => elem.id === serie.id );
-    const idWatched = watchedSeries.filter(elem => elem.id === serie.id );
+    const idCurrent = currentSeries.filter(elem => elem.id === serie.id);
+    const idWatched = watchedSeries.filter(elem => elem.id === serie.id);
     const id = currentUser.uid;
 
     const addToCurrentList = async (e) => {
@@ -58,8 +58,10 @@ export default function TilesNavigation({ serie }) {
 
     return (
         <div className="tilesNavigation">
-            <button onClick={addToCurrentList} className={ idCurrent.length > 0 ? "hide" : "" } >En cours de visionnage</button>
+            <button onClick={addToCurrentList} className={ idCurrent.length > 0 ? "hide" : idWatched.length > 0 ? "hide" : "" } >En cours de visionnage</button>
             <button onClick={addToWatchedList} className={ idWatched.length > 0 ? "hide" : "" }>Vu en entier</button>
+            <span className={ idWatched.length > 0 ? "active" : "hide"}>Déjà tout vu BG !</span>
+            <span className={ idCurrent.length > 0 ? "active" : "hide"}>Déjà en train de regarder Mamen !</span>
         </div>
     )
 }
