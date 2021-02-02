@@ -9,8 +9,7 @@ import "./Profile.css";
 
 export default function Profile() {
 
-    const {currentSeries} = useContext(AuthContext);
-    const {watchedSeries} = useContext(AuthContext);
+    const {currentSeries, watchedSeries} = useContext(AuthContext);
 
     return (
         <div>

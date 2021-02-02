@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { db } from "../../Firebase/firebase";
 import { AuthContext } from "../../Authentication/Auth";
 
@@ -6,12 +6,12 @@ import "./TilesNavigation.css";
 
 export default function TilesNavigation({ serie }) {
 
-    const { currentSeries, setCurrentSeries, currentUser } = useContext(AuthContext);
-    const { watchedSeries, setWatchedSeries } = useContext(AuthContext);
+    const { currentSeries, setCurrentSeries, watchedSeries, setWatchedSeries, currentUser } = useContext(AuthContext);
 
     const indexCurrent = currentSeries.indexOf(serie);
-    const indexWatched = watchedSeries.indexOf(serie);
-
+    //const indexWatched = watchedSeries.indexOf(serie);
+    const idCurrent = currentSeries.filter(elem => elem.id === serie.id );
+    const idWatched = watchedSeries.filter(elem => elem.id === serie.id );
     const id = currentUser.uid;
 
     const addToCurrentList = async (e) => {
@@ -58,8 +58,8 @@ export default function TilesNavigation({ serie }) {
 
     return (
         <div className="tilesNavigation">
-            <button onClick={addToCurrentList} className={ indexCurrent !== -1 ? "hide" : "" } >En cours de visionnage</button>
-            <button onClick={addToWatchedList} className={ indexWatched !== -1 ? "hide" : "" }>Vu en entier</button>
+            <button onClick={addToCurrentList} className={ idCurrent.length > 0 ? "hide" : "" } >En cours de visionnage</button>
+            <button onClick={addToWatchedList} className={ idWatched.length > 0 ? "hide" : "" }>Vu en entier</button>
         </div>
     )
 }

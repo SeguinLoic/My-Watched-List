@@ -17,6 +17,7 @@ export const AuthProvider = ({ children }) => {
                 getUserData(user.uid);
             }
             setCurrentUser(user);
+            console.log('User Change');
         })
     }, [])
 
