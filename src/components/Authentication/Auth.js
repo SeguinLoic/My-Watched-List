@@ -10,11 +10,15 @@ export const AuthProvider = ({ children }) => {
     const [userData, setUserData] = useState({});
     const [currentSeries, setCurrentSeries] = useState([]);
     const [watchedSeries, setWatchedSeries] = useState([]);
+    const [topTrends, setTopTrends] = useState([]);
+
+    const API_KEY = process.env.REACT_APP_API_KEY;
  
     useEffect(() => {
         auth.onAuthStateChanged(user => {
             if(user) {
                 getUserData(user.uid);
+                getTrends();
             }
             setCurrentUser(user);
         })
@@ -42,8 +46,15 @@ export const AuthProvider = ({ children }) => {
         });
     }
 
+    const getTrends = async () => {
+        console.log("Get Trends");
+        const response = await fetch(`https://api.themoviedb.org/3/trending/tv/day?api_key=${API_KEY}`);
+        const myJSON = await response.json();
+        setTopTrends(myJSON.results);
+    }
+
     return (
-        <AuthContext.Provider value={{ currentUser, userData, currentSeries, setCurrentSeries, watchedSeries, setWatchedSeries }}>
+        <AuthContext.Provider value={{ currentUser, userData, currentSeries, setCurrentSeries, watchedSeries, setWatchedSeries, topTrends }}>
             {children}
         </AuthContext.Provider>
     )
