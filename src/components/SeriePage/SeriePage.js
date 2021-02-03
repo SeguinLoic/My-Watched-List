@@ -1,23 +1,23 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 
-export default function SeriePage(props) {
+export default function SeriePage() {
 
-    const [data, setData] = useState({});
+    const location = useLocation();
 
     useEffect(() => {
-        getData();
+        console.log(location.state.serie);
     }, [])
-
-    const getData = async () => {
-        const state = await props.location.state;
-        setData(state);
-    }
 
     return (
         <div className="seriePage">
-            <h1>Je suis la page de la série {data.serie.original_name}</h1>
-            <Link to={`${data.location}`}>Retour</Link>
+            <img src={`https://image.tmdb.org/t/p/w1280${location.state.serie.backdrop_path}`} alt="hey"/>
+            <img src={`https://image.tmdb.org/t/p/w500${location.state.serie.poster_path}`} alt="hey"/>
+            <h1>{location.state.serie.original_name}</h1>
+            <span>Date : {location.state.serie.first_air_date}</span>
+            <span>Résumé : {location.state.serie.overview}</span>
+            <span>Note : {location.state.serie.vote_average}</span>
+            <Link to={`${location.state.location}`}>Retour</Link>
         </div>
     )
 }

@@ -22,5 +22,3 @@ export default function Tile({ serie }) {
         </div>
     )
 }
-
-//            <Link to={`/serie/${name}`}> 

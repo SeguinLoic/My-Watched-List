@@ -47,7 +47,6 @@ export const AuthProvider = ({ children }) => {
     }
 
     const getTrends = async () => {
-        console.log("Get Trends");
         const response = await fetch(`https://api.themoviedb.org/3/trending/tv/day?api_key=${API_KEY}`);
         const myJSON = await response.json();
         setTopTrends(myJSON.results);
