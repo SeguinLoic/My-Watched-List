@@ -10,10 +10,14 @@ export default function SearchBar() {
 
     const handleSearch = async (e) => {
         e.preventDefault();
-        const response = await fetch(`https://api.themoviedb.org/3/search/tv?api_key=${API_KEY}&query=${search}`);
-        const myJSON = await response.json();
-        setResult(myJSON.results);
-        setSearch("");
+        try {
+            const response = await fetch(`https://api.themoviedb.org/3/search/tv?api_key=${API_KEY}&query=${search}`);
+            const myJSON = await response.json();
+            setResult(myJSON.results);
+            setSearch("");
+        } catch(error) {
+            console.log(error);
+        }
     }
 
     return (

@@ -15,16 +15,15 @@ export default function Login() {
         setUserInfo({...userInfo, [e.target.id]: value});
     }
 
-    const userConnexion = (userID, userPassword, e) => {
+    const userConnexion = async (userID, userPassword, e) => {
         e.preventDefault();
-        firebase.auth().signInWithEmailAndPassword(userID, userPassword)
-        .then(() => {
+        try {
+            await firebase.auth().signInWithEmailAndPassword(userID, userPassword);
             setUserInfo({userID: "", userPassword: ""});
             history.push("/Home");
-        })
-        .catch((error) => {
+        } catch(error) {
             setError(error.message);
-        });
+        }
     }
 
     return (

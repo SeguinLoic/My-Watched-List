@@ -47,13 +47,26 @@ export const AuthProvider = ({ children }) => {
     }
 
     const getTrends = async () => {
-        const response = await fetch(`https://api.themoviedb.org/3/trending/tv/day?api_key=${API_KEY}`);
-        const myJSON = await response.json();
-        setTopTrends(myJSON.results);
+        try {
+            const response = await fetch(`https://api.themoviedb.org/3/trending/tv/day?api_key=${API_KEY}`);
+            const myJSON = await response.json();
+            setTopTrends(myJSON.results);
+        } catch(error) {
+            console.log(error);
+        }
     }
 
     return (
-        <AuthContext.Provider value={{ currentUser, userData, currentSeries, setCurrentSeries, watchedSeries, setWatchedSeries, topTrends }}>
+        <AuthContext.Provider 
+            value={{ 
+            currentUser, 
+            userData, 
+            currentSeries, 
+            setCurrentSeries, 
+            watchedSeries, 
+            setWatchedSeries, 
+            topTrends 
+        }}>
             {children}
         </AuthContext.Provider>
     )
