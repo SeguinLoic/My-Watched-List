@@ -23,8 +23,6 @@ export default function Profile() {
             <h2>Séries regardées</h2>
             <List list={watchedSeries} />
 
-            <h2>Mes stats</h2>
-
         </div>
     )
 }
