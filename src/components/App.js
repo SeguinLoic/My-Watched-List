@@ -10,6 +10,8 @@ import Authentication from "../router/Authentication"
 import SeriePage from "./SeriePage/SeriePage";
 import Attribution from "./Attribution/Attribution";
 
+de la merde 2
+
 import { AuthContext } from "./Authentication/Auth";
 
 function App() {
