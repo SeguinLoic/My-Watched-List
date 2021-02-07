@@ -2,10 +2,11 @@ import React, { useContext } from "react";
 import './App.css';
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 
-import Home from "../pages/Home/Home"
+//import Home from "../pages/Home/Home"
+import Home from "@/pages/Home/Home"
 import Profile from "../pages/Profile/Profile"
-import Account from "../pages/Account/Account"
-import Authentication from "./Authentication/Authentication"
+//import Account from "../pages/Account/Account"
+import Authentication from "../router/Authentication"
 import SeriePage from "./SeriePage/SeriePage";
 import Attribution from "./Attribution/Attribution";
 
@@ -24,9 +25,8 @@ function App() {
           <Router>
             <Redirect to ="/Home" />
             <Switch>
-              <Route exact path="/Home" component={Home}/>
-              <Route exact path="/Profile" component={Profile}/>
-              <Route exact path="/Account" component={Account}/>
+              <Route exact path="/Home" component={Home} />
+              <Route exact path="/Profile" component={Profile} />
               <Route path="/serie/:name" component={SeriePage} />
             </Switch>
           </Router> 
@@ -41,3 +41,5 @@ function App() {
 }
 
 export default App;
+
+// <Route exact path="/Account" component={Account}/>

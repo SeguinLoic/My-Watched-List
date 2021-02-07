@@ -1,11 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 
-import Signin from "./Signin";
-import Login from "./Login";
-import ForgotPassword from "./ForgotPassword";
+import Signin from "../components/Authentication/Signin";
+import Login from "../components/Authentication/Login";
+import ForgotPassword from "../components/Authentication/ForgotPassword";
 
-import LogNavigation from "../Navigation/LogNavigation"
+import LogNavigation from "../components/Navigation/LogNavigation"
 
 export default function Authentication() {
 
