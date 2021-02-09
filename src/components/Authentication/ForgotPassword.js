@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-import { auth } from "../Firebase/firebase";
+import { auth } from "../../infra/Firebase/firebase";
 import { useHistory } from "react-router-dom";
+
+import LogNavigation from "../Navigation/LogNavigation"
 
 export default function ForgotPassword() {
 
@@ -24,11 +26,15 @@ export default function ForgotPassword() {
 
     return (
         <div>
+            
             <h2>Mot de passe oublié ? Pas de soucis !</h2>
+
             <form onSubmit={sendEmail} >
                 <input type="text" placeholder="E-mail" value={email} onChange={(e) => setEmail(e.target.value)} />
                 <button>Demande de mot de passe</button>
             </form>
+
+            <LogNavigation />
         </div>
     )
 }

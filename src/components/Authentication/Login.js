@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import firebase from "firebase/app";
 import { useHistory } from "react-router-dom";
 
+import LogNavigation from "../Navigation/LogNavigation"
+
 import "./Login.css";
 
 export default function Login() {
@@ -38,6 +40,8 @@ export default function Login() {
             </form>
 
             <div className="message">{error}</div>
+
+            <LogNavigation />
 
         </div>
     )

@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import firebase from "firebase/app";
-import { db } from "../Firebase/firebase";
+import { db } from "../../infra/Firebase/firebase";
 import { useHistory } from "react-router-dom";
 import "./Signin.css"
+
+import LogNavigation from "../Navigation/LogNavigation"
 
 export default function Signin() {
 
@@ -66,7 +68,9 @@ export default function Signin() {
 
     return (
         <div className="signin">
+            
             <h2>Pas de compte ? Super simple !</h2>
+
             <form onSubmit={(e) => createAccount(e)}>
                 <input type="text" placeholder="Nom" id="lastName" value={userInfo.lastName} onChange={handleChange} />
                 <input type="text" placeholder="Prénom" id="firstName" value={userInfo.firstName} onChange={handleChange} />
@@ -75,7 +79,10 @@ export default function Signin() {
                 <input type="password" placeholder="Confirmer mot de passe" id="checkPassword" onChange={handleChange} />
                 <button type="submit">Envoyer</button>
             </form>
+
             <div>{ errorMessage }</div>
+
+            <LogNavigation />
         </div>
     )
 }
