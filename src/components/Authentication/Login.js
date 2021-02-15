@@ -6,7 +6,6 @@ import "./Login.css";
 export default function Login() {
 
     const [userInfo, setUserInfo] = useState({userID: "", userPassword: ""});
-    //const [error, setError] = useState("");
 
     const handleChange = (e) => {
         const value = e.target.value;
@@ -21,7 +20,6 @@ export default function Login() {
 
     return (
         <div className="Login">
-
             <h1>Connectez-vous !</h1>
 
             <form onSubmit={(e) => handleConnexion(userInfo.userID, userInfo.userPassword, e)}>
@@ -31,9 +29,6 @@ export default function Login() {
             </form>
 
             <LogNavigation />
-
         </div>
     )
 }
-
-// <div className="message">{error}</div>

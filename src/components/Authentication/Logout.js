@@ -1,6 +1,6 @@
 import React from "react";
-import { auth } from "../../infra/Firebase/firebase";
+import { userLogout } from "../../infra/Authentication/Authentication";
 
 export default function Logout() {
-    return <button onClick={() => auth.signOut()}>Déconnexion</button>
+    return <button onClick={userLogout}>Déconnexion</button>
 }

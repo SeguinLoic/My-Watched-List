@@ -1,6 +1,8 @@
 import { auth } from "../Firebase/firebase";
 import { db } from "../Firebase/firebase";
 
+export const userLogout = () => auth.signOut()
+
 export const userLogin = async (email, password) => {
     try {
         await auth.signInWithEmailAndPassword(email, password); 
@@ -19,6 +21,14 @@ export const createUserAcount = async (user) => {
             lists: {currentSeries: [], watchedSeries: []},
             stats: []
         })
+    } catch(error) {
+        throw error;
+    }
+}
+
+export const sendResetPassword = async (email) => {
+    try {
+        await auth.sendPasswordResetEmail(email);
     } catch(error) {
         throw error;
     }
