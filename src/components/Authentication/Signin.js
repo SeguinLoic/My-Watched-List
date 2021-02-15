@@ -1,25 +1,24 @@
 import React, { useState } from "react";
-import firebase from "firebase/app";
-import { db } from "../../infra/Firebase/firebase";
-import { useHistory } from "react-router-dom";
+import LogNavigation from "../Navigation/LogNavigation"
+
+import { createUserAcount } from "../../infra/Authentication/Authentication";
+
 import "./Signin.css"
 
-import LogNavigation from "../Navigation/LogNavigation"
+/*import firebase from "firebase/app";
+import { db } from "../../infra/Firebase/firebase";
+import { useHistory } from "react-router-dom";*/
+
 
 export default function Signin() {
 
-    const history = useHistory();
+    //const history = useHistory();
     const [errorMessage, setErrorMessage] = useState('');
     const [userInfo, setUserInfo] = useState({
         firstName: "",
         lastName: "",
         email: "",
-        password: "",
-        lists: {
-            currentSeries: [],
-            watchedSeries: []
-        },
-        stats: []
+        password: ""
     })
 
     const handleChange = (e) => {
@@ -38,7 +37,7 @@ export default function Signin() {
 
         if(userInfo.password === userInfo.checkPassword) {
 
-            firebase.auth().createUserWithEmailAndPassword(userInfo.email, userInfo.password)
+            /*firebase.auth().createUserWithEmailAndPassword(userInfo.email, userInfo.password)
             .then((user) => {
                 db.collection("users").doc(user.user.uid).set({
                     firstName: userInfo.firstName,
@@ -47,19 +46,15 @@ export default function Signin() {
                     lists: userInfo.lists,
                     stats: userInfo.stats
                 })
-                setUserInfo({
-                    firstName: "", 
-                    lastName: "", 
-                    email: "", 
-                    password: "", 
-                    lists: {currentSeries: [], watchedSeries: []}, 
-                    stats: []
-                });
+                setUserInfo({ firstName: "", lastName: "", email: "", password: "" });
                 history.push("/Home");
             })
             .catch((error) => {
                 console.log(error);
-            })
+            })*/
+
+            createUserAcount(userInfo);
+            setUserInfo({ firstName: "", lastName: "", email: "", password: "" });
 
         } else {
             setErrorMessage("Les mots de passes ne sont pas identiques");
@@ -83,6 +78,7 @@ export default function Signin() {
             <div>{ errorMessage }</div>
 
             <LogNavigation />
+            
         </div>
     )
 }
