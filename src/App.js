@@ -1,8 +1,8 @@
 import React from "react";
 import './App.css';
 
-import Attribution from "./Attribution/Attribution";
-import AppRouter from "../router/AppRouter";
+import Attribution from "./ui/components/Attribution/Attribution";
+import AppRouter from "./router/AppRouter";
 
 function App() {
 

@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../components/Authentication/Auth";
 
+//import { watchedMovies } from "../../store/Store";
+
 import Header from "../../components/Header/Header";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import List from "../../components/List/List"
@@ -21,8 +23,10 @@ export default function Profile() {
             <List list={currentSeries} />
 
             <h2>Séries regardées</h2>
-            <List list={watchedSeries} />
+            
 
         </div>
     )
 }
+
+/*<List list={watchedMovies} />*/

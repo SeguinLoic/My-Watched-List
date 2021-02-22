@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import LogNavigation from "../Navigation/LogNavigation"
-import { createUserAcount } from "../../infra/Authentication/Authentication";
+import { createUserAcount } from "../../../infra/Authentication/Authentication";
 import "./Signin.css"
 
 export default function Signin() {
@@ -20,20 +20,17 @@ export default function Signin() {
 
     const createAccount = (e) => {
         e.preventDefault();
-    
         for(let value in userInfo) {
             if (userInfo[value] === "") {
                 return setErrorMessage("Veuillez remplir tous les champs");
             }
         }
-
         if(userInfo.password === userInfo.checkPassword) {
             createUserAcount(userInfo);
             setUserInfo({ firstName: "", lastName: "", email: "", password: "" });
         } else {
             setErrorMessage("Les mots de passes ne sont pas identiques");
         }
-
     }
 
     return (

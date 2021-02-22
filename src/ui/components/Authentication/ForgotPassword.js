@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { sendResetPassword } from "../../infra/Authentication/Authentication";
+import { sendResetPassword } from "../../../infra/Authentication/Authentication";
 import LogNavigation from "../Navigation/LogNavigation"
 
 //import { useHistory } from "react-router-dom";

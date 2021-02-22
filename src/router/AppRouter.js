@@ -1,13 +1,13 @@
 import React, { useContext } from "react";
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
-import { AuthContext } from "../components/Authentication/Auth";
+import { AuthContext } from "../ui/components/Authentication/Auth";
 
-import Home from "../pages/Home/Home"
-import Profile from "../pages/Profile/Profile"
-import SeriePage from "../components/SeriePage/SeriePage";
-import Signin from "../components/Authentication/Signin";
-import Login from "../components/Authentication/Login";
-import ForgotPassword from "../components/Authentication/ForgotPassword";
+import Home from "../ui/pages/Home/Home"
+import Profile from "../ui/pages/Profile/Profile"
+import SeriePage from "../ui/components/SeriePage/SeriePage";
+import Signin from "../ui/components/Authentication/Signin";
+import Login from "../ui/components/Authentication/Login";
+import ForgotPassword from "../ui/components/Authentication/ForgotPassword";
 
 export default function AppRouter() {
 

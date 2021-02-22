@@ -3,7 +3,8 @@ import Tiles from "../Tiles/Tiles"
 
 import "./List.css";
 
-export default function List({ list }) {
+export default function List({list}) {
+    //console.log(list);
     return (
         <div className="list">
             {
