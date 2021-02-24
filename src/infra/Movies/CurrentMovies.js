@@ -1,7 +1,7 @@
 import { db } from "../Firebase/firebase";
 
 // GET DATA
-export const getUserCurrentList = async (id) => {
+export const getUserCurrentListDB = async (id) => {
     try {
         const doc = await db.collection("users").doc(id).get()
         const data = doc.data();

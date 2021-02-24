@@ -1,8 +1,10 @@
+import { getUserCurrentListDB } from "../infra/Movies/CurrentMovies"
 
+export const getCurrentList = data => {
+    return { type: 'getCurrentList', data };
+}
 
-const addMovieToCurrentList = async (movie) => {
-    /*const current = currentSeries;
-    current.push(serie);*/
-    /* --> envoie au store */ setCurrentSeries([...current]);
-    /* --> envoie en BDD */ addToDB(current);
-} 
+export const displayCurrentList = async (id) => {
+    const myData = await getUserCurrentListDB(id);
+    return myData;
+}
