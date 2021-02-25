@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { db } from "../../../infra/Firebase/firebase";
 import { auth } from "../../../infra/Firebase/firebase";
-//import { getTrends } from "../../infra/Movies/Trends"
 import { getUserWatchedList } from "../../../infra/Movies/WatchedMovies"
-//import { dispatchTrends, trends } from "../../store/Movies"
-//import { mapTrends } from "../../domain/Movies/Trends";
-//import { trends } from "../../store/Store";
 
 export const AuthContext = React.createContext();
 

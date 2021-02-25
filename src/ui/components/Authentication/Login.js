@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import LogNavigation from "../Navigation/LogNavigation"
-import { userLogin } from "../../../infra/Authentication/Authentication";
+import  { loginUser }  from "../../../domain/Login";
+import { StoreContext } from "../../../store/Store"
 import "./Login.css";
 
 export default function Login() {
 
     const [userInfo, setUserInfo] = useState({userID: "", userPassword: ""});
+    const { dispatch } = useContext(StoreContext)
 
     const handleChange = (e) => {
         const value = e.target.value;
@@ -14,7 +16,7 @@ export default function Login() {
 
     const handleConnexion = (userID, userPassword, e) => {
         e.preventDefault();
-        userLogin(userID, userPassword);
+        loginUser(userID, userPassword, dispatch);
         setUserInfo({userID: "", userPassword: ""});
     }
 

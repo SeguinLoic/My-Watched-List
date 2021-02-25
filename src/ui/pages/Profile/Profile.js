@@ -1,17 +1,15 @@
 import React, { useContext } from "react";
-import { AuthContext } from "../../components/Authentication/Auth";
-
-//import { watchedMovies } from "../../store/Store";
 
 import Header from "../../components/Header/Header";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import List from "../../components/List/List"
 
+import { StoreContext } from "../../../store/Store"
 import "./Profile.css";
 
 export default function Profile() {
 
-    const {currentSeries, watchedSeries} = useContext(AuthContext);
+    const storeContext = useContext(StoreContext);
 
     return (
         <div>
@@ -20,13 +18,11 @@ export default function Profile() {
             <SearchBar />
 
             <h2>Séries en cours</h2>
-            <List list={currentSeries} />
+            <List list={storeContext.store.currentList} />
 
             <h2>Séries regardées</h2>
-            
+            <List list={storeContext.store.watchedList} />
 
         </div>
     )
 }
-
-/*<List list={watchedMovies} />*/

@@ -11,10 +11,13 @@ export default function Home() {
 
     return (
         <div className="home">
+
             <Header />
             <SearchBar />
+
             <h2>Les dernières sorties</h2>
             <List list={storeContext.store.trends} />
+            
         </div>
     )
 }

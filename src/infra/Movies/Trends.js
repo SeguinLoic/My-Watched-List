@@ -6,6 +6,6 @@ export const getTrendsFromAPI = async () => {
         const myJSON = await response.json();
         return myJSON.results
     } catch(error) {
-        throw error;
+        throw new Error(error);
     }
 }

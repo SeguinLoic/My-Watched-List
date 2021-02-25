@@ -8,3 +8,8 @@ export const displayTrends = async () => {
     const data = await getTrendsFromAPI();
     return data;
 }
+
+export const mapTrends = async () => {
+    const data = await getTrendsFromAPI();
+    return data;
+}
