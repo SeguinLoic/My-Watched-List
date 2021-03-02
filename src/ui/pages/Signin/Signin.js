@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import LogNavigation from "../Navigation/LogNavigation"
+import LogNavigation from "../../components/AppNavigation/LogNavigation"
 import { createUserAcount } from "../../../infra/Authentication/Authentication";
 import "./Signin.css"
 

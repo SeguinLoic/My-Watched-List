@@ -1,17 +1,17 @@
 import React, { useContext } from "react";
-import AppNavigation from "../Navigation/AppNavigation";
+import AppNavigation from "../AppNavigation/AppNavigation";
 
-import { AuthContext } from "../Authentication/Auth";
+import { StoreContext } from "../../../store/Store";
 
 import "./Header.css";
 
 export default function Header() {
 
-    const { userData } = useContext(AuthContext);
+    const { store } = useContext(StoreContext);
 
     return (
         <header className="header">
-            <h1>Hello { userData.firstName }</h1>
+            <h1>Hello { store.userID }</h1>
             <AppNavigation />
         </header>
     )

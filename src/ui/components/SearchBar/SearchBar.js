@@ -1,23 +1,18 @@
 import React, { useState } from "react";
 import Tiles from "../Tiles/Tiles"
 
+import { searchMovies } from "../../../domain/Movies/Catalog/Search"
+
 export default function SearchBar() {
-    
-    const API_KEY = process.env.REACT_APP_API_KEY;
 
     const [search, setSearch] = useState("");
     const [result, setResult] = useState([]);
 
     const handleSearch = async (e) => {
         e.preventDefault();
-        try {
-            const response = await fetch(`https://api.themoviedb.org/3/search/tv?api_key=${API_KEY}&query=${search}`);
-            const myJSON = await response.json();
-            setResult(myJSON.results);
-            setSearch("");
-        } catch(error) {
-            console.log(error);
-        }
+        const movies = await searchMovies(search);
+        setResult(movies);
+        setSearch("");
     }
 
     return (

@@ -1,4 +1,4 @@
-import { setMovieToWatchedList, watchedMovies } from "../../store/Store"
+import { setMovieToWatchedList, watchedMovies } from "../../../store/Store"
 
 const addMovieToWatchedList = () => {
     /*const current = currentSeries;

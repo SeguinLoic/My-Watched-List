@@ -1,23 +1,38 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
-import { AuthContext } from "../ui/components/Authentication/Auth";
+import { StoreContext } from "../store/Store";
 
+import ForgotPassword from "../ui/pages/ForgotPassword/ForgotPassword";
+import Login from "../ui/pages/Login/Login";
+import Signin from "../ui/pages/Signin/Signin";
 import Home from "../ui/pages/Home/Home"
 import Profile from "../ui/pages/Profile/Profile"
-import SeriePage from "../ui/components/SeriePage/SeriePage";
-import Signin from "../ui/components/Authentication/Signin";
-import Login from "../ui/components/Authentication/Login";
-import ForgotPassword from "../ui/components/Authentication/ForgotPassword";
+import SeriePage from "../ui/pages/Movie/SeriePage";
+
+import { getSessionUser } from "../domain/User/Session"
+import { getUserData } from "../domain/Authentication/Login"
 
 export default function AppRouter() {
 
-  const {currentUser} = useContext(AuthContext);
+  const [currentUser, setCurrentUser] = useState("");
+  const { store, dispatch } = useContext(StoreContext);
+
+  useEffect(() => {
+
+    const user = getSessionUser();
+    if (!user) return;
+
+    getUserData(user, dispatch);
+    setCurrentUser(user);
+    
+  }, []) 
+
 
     return (
       <Router>
         <Switch>
           {
-          currentUser ? (
+          store.userID ? (
             <>
               <Redirect to="/Home" />
               <Route exact path="/Home" component={Home} />

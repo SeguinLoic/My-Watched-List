@@ -1,12 +1,9 @@
 import React, { useState } from "react";
 import { sendResetPassword } from "../../../infra/Authentication/Authentication";
-import LogNavigation from "../Navigation/LogNavigation"
-
-//import { useHistory } from "react-router-dom";
+import LogNavigation from "../../components/AppNavigation/LogNavigation"
 
 export default function ForgotPassword() {
 
-    //const history = useHistory();
     const [errorMessage, setErrorMessage] = useState('');
     const [email, setEmail] = useState("");
 

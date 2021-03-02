@@ -13,6 +13,10 @@ export const reducer = (state, action) => {
     switch(action.type) {
         case 'INITIALISE_STORE': 
             return action.data
+        case 'CLEAR_STORE' : 
+            return initialState
+        case 'UPDATE_CURRENT_LIST_STORE' :
+            return action.data
         default: 
             return state
     }

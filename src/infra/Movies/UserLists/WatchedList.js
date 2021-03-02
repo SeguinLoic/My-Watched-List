@@ -1,4 +1,4 @@
-import { db } from "../Firebase/firebase";
+import { db } from "../../Firebase/firebase";
 
 // GET DATA
 export const getUserWatchedList = async (id) => {
