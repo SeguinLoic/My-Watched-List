@@ -9,4 +9,5 @@ export const logoutUser = (dispatch) => {
     clearSessionsUser();
     userLogout();
     dispatch(clearStore());
+    window.location = "/Login";
 }

@@ -9,7 +9,7 @@ import "./Profile.css";
 
 export default function Profile() {
 
-    const storeContext = useContext(StoreContext);
+    const { store } = useContext(StoreContext);
 
     return (
         <div>
@@ -18,10 +18,10 @@ export default function Profile() {
             <SearchBar />
 
             <h2>Séries en cours</h2>
-            <List list={storeContext.store.currentList} />
+            <List list={store.currentList} />
 
             <h2>Séries regardées</h2>
-            <List list={storeContext.store.watchedList} />
+            <List list={store.watchedList} />
 
         </div>
     )

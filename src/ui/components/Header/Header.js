@@ -11,7 +11,7 @@ export default function Header() {
 
     return (
         <header className="header">
-            <h1>Hello { store.userID }</h1>
+            <h1>Hello { store.user.name }</h1>
             <AppNavigation />
         </header>
     )

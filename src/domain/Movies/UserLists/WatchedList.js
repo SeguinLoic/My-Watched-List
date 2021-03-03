@@ -1,17 +1,20 @@
-import { setMovieToWatchedList, watchedMovies } from "../../../store/Store"
+import { updateWatchedListDB } from "../../../infra/Movies/UserLists/WatchedList"
+import { updateCurrentListDB } from "../../../infra/Movies/UserLists/CurrentList"
 
-const addMovieToWatchedList = () => {
-    /*const current = currentSeries;
-    const watched = watchedSeries;
-    watched.push(serie);*/
+export const updateWatchedListStore = data => {
+    return { type: 'UPDATE_WATCHED_LIST_STORE', data };
+}
 
-    setMovieToWatchedList(movie);
+export const updateWatchedList = (movie, store, dispatch) => {
 
-    /*if (idCurrent.length > 0) {
-        current.splice(indexCurrent, 1);
-        setCurrentSeries(current);
-    }*/
+    const updatedStore = {...store}
 
-    /*setWatchedSeries([...watched]);
-    addToDB(current, watched)*/
-} 
+    updatedStore.watchedList.push(movie);
+    updatedStore.currentList.splice(updatedStore.currentList.indexOf(movie), 1);
+
+    updateWatchedListDB(store.userID, updatedStore.watchedList);
+    updateCurrentListDB(store.userID, updatedStore.currentList);
+
+    dispatch(updateWatchedListStore(updatedStore));
+    
+}

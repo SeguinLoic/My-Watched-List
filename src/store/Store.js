@@ -1,6 +1,10 @@
 import React, { useReducer } from "react";
 
 const initialState = {
+    user: {
+        id: "",
+        name: ""
+    },
     userID: "",
     trends: [],
     currentList: [],
@@ -16,6 +20,8 @@ export const reducer = (state, action) => {
         case 'CLEAR_STORE' : 
             return initialState
         case 'UPDATE_CURRENT_LIST_STORE' :
+            return action.data
+        case 'UPDATE_WATCHED_LIST_STORE' :
             return action.data
         default: 
             return state

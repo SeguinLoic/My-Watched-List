@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Tiles from "../Tiles/Tiles"
+import List from "../List/List"
 
 import { searchMovies } from "../../../domain/Movies/Catalog/Search"
 
@@ -31,7 +32,7 @@ export default function SearchBar() {
                         <div className="blocSearch">
                             <h2>Ma recherche</h2>
                             <div className="result">
-                                { result.map( serie => <Tiles serie={serie} /> ) } 
+                                <List list={result} />
                             </div>
                         </div>
                     : 

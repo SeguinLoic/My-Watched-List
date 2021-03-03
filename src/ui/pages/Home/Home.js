@@ -7,7 +7,7 @@ import { StoreContext } from "../../../store/Store"
 
 export default function Home() {
 
-    const storeContext = useContext(StoreContext);
+    const { store } = useContext(StoreContext);
 
     return (
         <div className="home">
@@ -16,7 +16,7 @@ export default function Home() {
             <SearchBar />
 
             <h2>Les dernières sorties</h2>
-            <List list={storeContext.store.trends} />
+            <List list={store.trends} />
             
         </div>
     )
