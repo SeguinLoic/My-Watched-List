@@ -33,7 +33,6 @@ export const getUserData = async (userID, dispatch) => {
             id: userID,
             name: userName
         },
-        userID: userID,
         trends: trends,
         currentList: currentList,
         watchedList: watchedList
