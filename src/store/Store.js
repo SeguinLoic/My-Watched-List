@@ -5,7 +5,6 @@ const initialState = {
         id: "",
         name: ""
     },
-    userID: "",
     trends: [],
     currentList: [],
     watchedList: []

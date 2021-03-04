@@ -1,5 +1,5 @@
 import { userLogout } from "../../infra/Authentication/Authentication"
-import { clearSessionsUser } from "../User/Session"
+import { clearSessionsUser } from "../Session/Session"
 
 export const clearStore = () => {
     return { type: 'CLEAR_STORE' };

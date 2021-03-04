@@ -9,7 +9,7 @@ import Home from "../ui/pages/Home/Home"
 import Profile from "../ui/pages/Profile/Profile"
 import SeriePage from "../ui/pages/Movie/SeriePage";
 
-import { getSessionUser } from "../domain/User/Session"
+import { getSessionUser } from "../domain/Session/Session"
 import { getUserData } from "../domain/Authentication/Login"
 
 export default function AppRouter() {
@@ -32,7 +32,7 @@ export default function AppRouter() {
       <Router>
         <Switch>
           {
-          store.userID ? (
+          store.user.id ? (
             <>
               <Route exact path="/Home" component={Home} />
               <Route exact path="/Profile" component={Profile} />

@@ -1,11 +1,11 @@
-.tilesNavigation {
+.navigation {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
-.tilesNavigation button.hide, .tilesNavigation span.hide {
+.navigation button.hide, .navigation span.hide {
     display: none;
 }
-.tilesNavigation span.active {
+.navigation span.active {
     color: #1daa14;
 }

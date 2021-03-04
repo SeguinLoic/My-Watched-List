@@ -1,5 +1,5 @@
 import { userLogin } from "../../infra/Authentication/Authentication"
-import { setSessionUser } from "../User/Session"
+import { setSessionUser } from "../Session/Session"
 import { getUserCurrentList } from "../../infra/Movies/UserLists/CurrentList"
 import { getUserWatchedList } from "../../infra/Movies/UserLists/WatchedList"
 import { getTrends } from "../Movies/Catalog/Trends"
