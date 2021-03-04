@@ -1,19 +1,19 @@
 import React, { useContext } from "react";
 import { StoreContext } from "../../../../store/Store"
 
-export default function Status() {
+import { isMovieInCurrentList } from "../../../../domain/Utils/isMovieInLists"
+import { isMovieInWatchedList } from "../../../../domain/Utils/isMovieInLists"
 
-    const { store, dispatch } = useContext(StoreContext);
+import "./Status.css";
+
+export default function Status({ movie }) {
+
+    const { store } = useContext(StoreContext);
 
     return (
         <div className="status">
+            <span className={isMovieInCurrentList(store, movie)}>En cours de visionnage</span>
+            <span className={isMovieInWatchedList(store, movie)}>Série terminée</span>
         </div>
     )
 }
-
-/*
-
-<span className={ idCurrent.length > 0 && location.pathname === "/Home" && idWatched.length === 0 ? "active" : "hide" }>Déjà en train de regarder Mamen !</span>
-<span className={ idWatched.length > 0  && location.pathname === "/Home"  ? "active" : "hide" }>Déjà tout vu BG !</span>
-
-*/

@@ -5,6 +5,7 @@ import SearchBar from "../../components/SearchBar/SearchBar";
 import List from "../../components/List/List"
 
 import { StoreContext } from "../../../store/Store"
+
 import "./Profile.css";
 
 export default function Profile() {
@@ -18,10 +19,10 @@ export default function Profile() {
             <SearchBar />
 
             <h2>Séries en cours</h2>
-            <List list={store.currentList} />
+            <List list={store.currentList} name='currentList' />
 
             <h2>Séries regardées</h2>
-            <List list={store.watchedList} />
+            <List list={store.watchedList} name='watchedList' />
 
         </div>
     )

@@ -5,12 +5,12 @@ import WatchedBtn from "./Watched/WatchedBtn"
 
 import "./Navigation.css";
 
-export default function Navigation({ serie }) {
+export default function Navigation({ movie }) {
 
     return (
         <div className="navigation">
-            <CurrentBtn movie={serie} />
-            <WatchedBtn movie={serie} />
+            <CurrentBtn movie={movie} />
+            <WatchedBtn movie={movie} />
         </div>
     )
 }

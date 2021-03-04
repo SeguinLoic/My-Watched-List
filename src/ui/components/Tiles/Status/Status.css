@@ -1,0 +1,6 @@
+.status span {
+    display: none;
+}
+.status span.inList {
+    display: flex;
+}

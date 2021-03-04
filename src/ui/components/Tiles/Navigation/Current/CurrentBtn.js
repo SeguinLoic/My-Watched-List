@@ -2,7 +2,7 @@ import React, { useContext } from "react"
 import { StoreContext } from "../../../../../store/Store"
 
 import { updateCurrentList } from "../../../../../domain/Movies/UserLists/CurrentList"
-import { isMovieInCurrentList } from "../../../../../domain/Utils/isMovieInLists"
+import { isMovieInCurrentAndWatchedList } from "../../../../../domain/Utils/isMovieInLists"
 
 export default function CurrentBtn({ movie }) {
 
@@ -13,5 +13,5 @@ export default function CurrentBtn({ movie }) {
         updateCurrentList(movie, store, dispatch); 
     } 
 
-    return <button onClick={addToCurrentList} className={ isMovieInCurrentList(store, movie) }>En cours</button>
+    return <button onClick={addToCurrentList} className={ isMovieInCurrentAndWatchedList(store, movie) }>En cours</button>
 }

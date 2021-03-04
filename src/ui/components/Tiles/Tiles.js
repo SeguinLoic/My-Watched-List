@@ -4,6 +4,8 @@ import { Link, useLocation } from "react-router-dom";
 import Navigation from "./Navigation/Navigation";
 import Status from "./Status/Status"
 
+import "./Tiles.css";
+
 export default function Tile({ serie }) {
 
     const location = useLocation();
@@ -15,8 +17,8 @@ export default function Tile({ serie }) {
                 <img src={`https://image.tmdb.org/t/p/w500${serie.presentationImage}`} alt="hey"/>
                 <span className="name">{serie.movieName}</span>
             </Link>
-            <Status />
-            <Navigation serie={serie} />
+            <Status movie={serie} />
+            <Navigation movie={serie} />
         </div>
     )
 }

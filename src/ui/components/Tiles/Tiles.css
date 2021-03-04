@@ -1,0 +1,3 @@
+.currentList .tile .status, .watchedList .tile .status {
+    display: none;
+}

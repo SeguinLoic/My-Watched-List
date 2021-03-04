@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: flex-start;
 }
-.navigation button.hide, .navigation span.hide {
+.navigation .inList {
     display: none;
 }
 .navigation span.active {
