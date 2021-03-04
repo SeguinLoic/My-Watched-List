@@ -1,8 +1,30 @@
 body {
-    padding: 50px;
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Open sans';
 }
 body h1 {
     margin: 0px;
+    font-family: 'Open sans';
+    font-weight: 700;
+    color: #525a64;
+}
+
+/* -- -- APP -- -- */ 
+.App {
+    padding: 50px;
+    padding-bottom: 130px;
+    min-height: 100vH;
+    box-sizing: border-box;
+    display: flex;
+}
+
+/* -- -- FORM -- -- */ 
+form input {
+    margin-bottom: 15px;
+    padding: 10px 15px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 header form {
@@ -24,21 +46,4 @@ header form {
 }
 .sorties img:not(:last-child), .monTop img:not(:last-child), .search img:not(:last-child), .result img:not(:last-child) {
     margin-right: 20px;
-}
-
-.attribution {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 65px;
-}
-.attribution img {
-    width: 350px;
-    margin-top: 5px;
-}
-.attribution span {
-    font-style: italic;
-    padding-bottom: 7px;
-    color: #848484;
-    font-size: 0.9em;
 }

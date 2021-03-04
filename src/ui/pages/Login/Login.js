@@ -22,15 +22,17 @@ export default function Login() {
 
     return (
         <div className="Login">
-            <h1>Connectez-vous !</h1>
+            <div className="formLogin">
+                <h1>Connectez-vous !</h1>
 
-            <form onSubmit={(e) => handleLogin(userInfo.userID, userInfo.userPassword, e)}>
-                <input id="userID"  type="text" placeholder="E-mail" value={userInfo.userID} onChange={handleChange} />
-                <input id="userPassword"  type="password" placeholder="Password" value={userInfo.userPassword} onChange={handleChange} />
-                <button>Connexion</button>
-            </form>
+                <form onSubmit={(e) => handleLogin(userInfo.userID, userInfo.userPassword, e)}>
+                    <input id="userID"  type="text" placeholder="E-mail" value={userInfo.userID} onChange={handleChange} />
+                    <input id="userPassword"  type="password" placeholder="Password" value={userInfo.userPassword} onChange={handleChange} />
+                    <button>Connexion</button>
+                </form>
 
-            <LogNavigation />
+                <LogNavigation />
+            </div>
         </div>
     )
 }

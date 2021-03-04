@@ -1,0 +1,22 @@
+.attribution {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-top: 1px solid #dfdfdf;
+    height: 55px;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 0px 100px;
+    box-sizing: border-box;
+}
+.attribution img {
+    width: 200px;
+}
+.attribution span {
+    color: #3d4750;
+    font-size: 0.8em;
+    font-family: 'Open sans';
+}

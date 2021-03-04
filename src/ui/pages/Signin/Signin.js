@@ -35,20 +35,22 @@ export default function Signin() {
 
     return (
         <div className="signin">
-            <h2>Pas de compte ? Super simple !</h2>
+            <div className="formSignin">
+                <h1>Pas de compte ? Super simple !</h1>
 
-            <form onSubmit={(e) => createAccount(e)}>
-                <input type="text" placeholder="Nom" id="lastName" value={userInfo.lastName} onChange={handleChange} />
-                <input type="text" placeholder="Prénom" id="firstName" value={userInfo.firstName} onChange={handleChange} />
-                <input type="text" placeholder="E-mail" id="email" value={userInfo.email} onChange={handleChange} />
-                <input type="password" placeholder="Mot de passe" id="password" value={userInfo.password} onChange={handleChange} />
-                <input type="password" placeholder="Confirmer mot de passe" id="checkPassword" onChange={handleChange} />
-                <button type="submit">Envoyer</button>
-            </form>
+                <form onSubmit={(e) => createAccount(e)}>
+                    <input type="text" placeholder="Nom" id="lastName" value={userInfo.lastName} onChange={handleChange} />
+                    <input type="text" placeholder="Prénom" id="firstName" value={userInfo.firstName} onChange={handleChange} />
+                    <input type="text" placeholder="E-mail" id="email" value={userInfo.email} onChange={handleChange} />
+                    <input type="password" placeholder="Mot de passe" id="password" value={userInfo.password} onChange={handleChange} />
+                    <input type="password" placeholder="Confirmer mot de passe" id="checkPassword" onChange={handleChange} />
+                    <button type="submit">Envoyer</button>
+                </form>
 
-            <div>{ errorMessage }</div>
+                <div>{ errorMessage }</div>
 
-            <LogNavigation />
+                <LogNavigation />
+            </div>
         </div>
     )
 }
