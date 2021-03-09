@@ -15,12 +15,12 @@ h2 {
     margin-bottom: 10px;
 }
 .bloc:not(:last-child) {
-    margin-bottom: 25px;
+    margin-bottom: 35px;
 }
 
 /* -- -- APP -- -- */ 
 .App {
-    padding: 50px;
+    padding: 75px;
     padding-bottom: 130px;
     min-height: 100vH;
     box-sizing: border-box;
@@ -72,10 +72,6 @@ form input {
     padding: 10px 15px;
     width: 100%;
     box-sizing: border-box;
-}
-
-header form {
-    margin-top: 25px;
 }
 
 .blocSearch {

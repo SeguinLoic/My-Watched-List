@@ -1,30 +1,22 @@
 .header {
     display: flex;
-    border: 1px solid red;
+    border-bottom: 1px solid #e2e2e2;
     justify-content: space-between;
-    margin-bottom: 25px;
+    margin-bottom: 35px;
+    padding-bottom: 15px;
 }
-.headerNavigation .appNavigation {
-    border-top: 1px solid #dfdfdf;
-    margin-top: 15px;
-    padding: 0px 15px;
-    padding-top: 10px;
-}
-.headerNavigation .appNavigation a {
-    margin: 0px 5px;
-}
-
-.search form button {
-    padding: 10px 25px;
-    font-size: 0.8em;
-    font-weight: 700;
-    line-height: 1em;
-}
-
-.search form input {
-    margin-right: 10px;
-}
-.search form {
+.introBloc {
     display: flex;
-    align-items: flex-start;
+    align-items: flex-end;
+}
+.introBloc h1 {
+    line-height: 1em;
+    margin-right: 25px;
+    color: #5a2bec;
+    font-size: 2.2em;
+}
+.searchBloc {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
 }

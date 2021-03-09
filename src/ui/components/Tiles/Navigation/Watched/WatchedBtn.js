@@ -4,6 +4,8 @@ import { StoreContext } from "../../../../../store/Store"
 import { updateWatchedList } from "../../../../../domain/Movies/UserLists/WatchedList"
 import { isMovieInWatchedList } from "../../../../../domain/Utils/isMovieInLists"
 
+import checkLogo from "../../../../assets/check.svg"
+
 export default function WatchedBtn({ movie }) {
 
     const { store, dispatch } = useContext(StoreContext);
@@ -13,5 +15,14 @@ export default function WatchedBtn({ movie }) {
         updateWatchedList(movie, store, dispatch); 
     } 
 
-    return <button onClick={addToWatchedList} className={ isMovieInWatchedList(store, movie) }>Terminé</button>
+    return (
+        <div onClick={addToWatchedList} className={ "button " + isMovieInWatchedList(store, movie) }>
+            <img src={checkLogo} />
+            <span>Terminé</span>
+        </div>
+    )
 }
+
+/*
+<button onClick={addToWatchedList} className={ isMovieInWatchedList(store, movie) }>Terminé</button>
+*/

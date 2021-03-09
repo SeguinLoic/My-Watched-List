@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import Tiles from "../Tiles/Tiles"
 import List from "../List/List"
 
 import { searchMovies } from "../../../domain/Movies/Catalog/Search"
+
+import searchLogo from "../../assets/search.svg"
+import "./SearchBar.css"
 
 export default function SearchBar() {
 
@@ -21,6 +23,7 @@ export default function SearchBar() {
         <div className="search">
 
             <form onSubmit={handleSearch}>
+                <img src={searchLogo} />
                 <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Rechercher une série" />
             </form>
 

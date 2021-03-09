@@ -2,10 +2,3 @@
     display: flex;
     overflow-x: scroll;
 }
-.list .tile {
-    display: flex;
-    flex-direction: column;
-}
-.list .tile:not(:last-child) {
-    margin-right: 25px;
-}

@@ -18,8 +18,11 @@ export default function Tile({ serie }) {
                 <span className="filtre"></span>
                 <span className="name">{serie.movieName}</span>
             </Link>
-            <Status movie={serie} />
             <Navigation movie={serie} />
         </div>
     )
 }
+
+/*
+<Status movie={serie} />
+*/

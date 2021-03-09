@@ -21,7 +21,7 @@
     left: 0;
     top: 0;
 }
-.latestMovie img {
+.latestMovie > a > img {
     position: absolute;
     width: 100%;
     top: 50%;
@@ -52,10 +52,10 @@ span.rate {
     display: flex;
     flex-direction: revert;
 }
-.latestMovie .content .navigation button {
+.latestMovie .content .navigation .button {
     margin: 0px 5px;
     border: none;
-    padding: 10px 25px;
+    padding: 10px 15px;
     border-radius: 5px;
     font-size: 0.9em;
     font-weight: 700;
@@ -65,13 +65,22 @@ span.rate {
     cursor: pointer;
     transition: all 0.3s;
     box-shadow: 0px 5px 30px -5px rgb(0 0 0 / 50%);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: auto;
+    height: auto;
+}
+.latestMovie .content .navigation .button img {
+    width: 19px;
+    margin-right: 8px;
 }
 
 /* -- -- TRANSITION -- -- */ 
-.latestMovie:hover img {
+.latestMovie:hover > a > img {
     width: 102%;
 }
-.latestMovie .content .navigation button:hover {
+.latestMovie .content .navigation .button:hover {
     box-shadow: 0px 5px 30px -1px rgb(0 0 0 / 50%);
     background-color: #eaeaea;
 }

@@ -16,11 +16,15 @@ export default function Profile() {
 
             <Header />
 
-            <h2>Séries en cours</h2>
-            <List list={store.currentList} name='currentList' />
+            <div className="bloc">
+                <h2>Séries en cours</h2>
+                <List list={store.currentList} name='currentList' />
+            </div>
 
-            <h2>Séries regardées</h2>
-            <List list={store.watchedList} name='watchedList' />
+            <div className="bloc">
+                <h2>Séries regardées</h2>
+                <List list={store.watchedList} name='watchedList' />
+            </div>
 
         </div>
     )

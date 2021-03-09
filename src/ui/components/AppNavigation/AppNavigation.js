@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-import Logout from "../Logout/Logout"
+import "./AppNavigation.css";
 
 export default function AppNavigation() {
 
@@ -16,7 +16,6 @@ export default function AppNavigation() {
         <div className="appNavigation">
             <Link to="/Home" className={ currentLocation === "/Home" ? "active" : ""}>Home</Link>
             <Link to="/Profile" className={ currentLocation === "/Profile" ? "active" : ""}>Profile</Link>
-            <Logout />
         </div>
     )
 }
