@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import AppNavigation from "../AppNavigation/AppNavigation";
+import SearchBar from "../SearchBar/SearchBar"
 
 import { StoreContext } from "../../../store/Store";
 
@@ -11,8 +12,11 @@ export default function Header() {
 
     return (
         <header className="header">
-            <h1>Hello { store.user.name }</h1>
-            <AppNavigation />
+            <div className="headerNavigation">
+                <h1>Hello { store.user.name }</h1>
+                <AppNavigation />
+            </div>
+            <SearchBar />
         </header>
     )
 }

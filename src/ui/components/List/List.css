@@ -9,7 +9,3 @@
 .list .tile:not(:last-child) {
     margin-right: 25px;
 }
-.list .tile img {
-    width: 175px;
-    margin-bottom: 10px;
-}

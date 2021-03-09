@@ -9,7 +9,7 @@ export const updateCurrentList = (movie, store, dispatch) => {
     const updatedStore = {...store}
     updatedStore.currentList.push(movie);
 
-    updateCurrentListDB(store.userID, updatedStore.currentList);
+    updateCurrentListDB(store.user.id, updatedStore.currentList);
     dispatch(updateCurrentListStore(updatedStore));
 
 }

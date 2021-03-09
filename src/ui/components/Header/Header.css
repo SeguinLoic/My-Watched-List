@@ -1,0 +1,30 @@
+.header {
+    display: flex;
+    border: 1px solid red;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+.headerNavigation .appNavigation {
+    border-top: 1px solid #dfdfdf;
+    margin-top: 15px;
+    padding: 0px 15px;
+    padding-top: 10px;
+}
+.headerNavigation .appNavigation a {
+    margin: 0px 5px;
+}
+
+.search form button {
+    padding: 10px 25px;
+    font-size: 0.8em;
+    font-weight: 700;
+    line-height: 1em;
+}
+
+.search form input {
+    margin-right: 10px;
+}
+.search form {
+    display: flex;
+    align-items: flex-start;
+}

@@ -21,8 +21,7 @@ export default function SearchBar() {
         <div className="search">
 
             <form onSubmit={handleSearch}>
-                <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} />
-                <button>Search</button>
+                <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Rechercher une série" />
             </form>
 
             <div className="searchResult">

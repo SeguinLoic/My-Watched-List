@@ -21,16 +21,17 @@ export default function ForgotPassword() {
 
     return (
         <div className="forgotPassword">
-            <div className="formForgotPassword">
-                <h2>Mot de passe oublié ? Pas de soucis !</h2>
+            <div className="formContainer">
+                <div className="formContent">
+                    <h1>Mot de passe oublié ? Pas de soucis !</h1>
 
-                <form onSubmit={sendEmail} >
-                    <input type="text" placeholder="E-mail" value={email} onChange={(e) => setEmail(e.target.value)} />
-                    <button>Demande de mot de passe</button>
-                </form>
+                    <form onSubmit={sendEmail} >
+                        <input type="text" placeholder="E-mail" value={email} onChange={(e) => setEmail(e.target.value)} />
+                        <button>Demande de mot de passe</button>
+                    </form>
 
-                <div>{ errorMessage }</div>
-
+                    <div>{ errorMessage }</div>
+                    </div>
                 <LogNavigation />
             </div>
         </div>

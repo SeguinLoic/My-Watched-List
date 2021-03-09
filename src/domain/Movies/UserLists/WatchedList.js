@@ -12,8 +12,8 @@ export const updateWatchedList = (movie, store, dispatch) => {
     updatedStore.watchedList.push(movie);
     updatedStore.currentList.splice(updatedStore.currentList.indexOf(movie), 1);
 
-    updateWatchedListDB(store.userID, updatedStore.watchedList);
-    updateCurrentListDB(store.userID, updatedStore.currentList);
+    updateWatchedListDB(store.user.id, updatedStore.watchedList);
+    updateCurrentListDB(store.user.id, updatedStore.currentList);
 
     dispatch(updateWatchedListStore(updatedStore));
     

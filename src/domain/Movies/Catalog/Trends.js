@@ -3,6 +3,11 @@ import { formatedMoviesFromAPI } from "../../Utils/formatedMovies"
 
 export const getTrends = async () => {
     const movies = await getTrendsFromAPI();
-    const formatedMovies = await formatedMoviesFromAPI(movies);
-    return formatedMovies;
+    const formatedListMovies = await formatedMoviesFromAPI(movies);
+    const latestMovie = formatedListMovies.shift();
+    const trends = {
+        trendsList: formatedListMovies,
+        latestMovie: latestMovie
+    }
+    return trends;
 }
