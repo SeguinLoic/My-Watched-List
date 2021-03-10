@@ -1,4 +1,14 @@
 .list {
     display: flex;
-    overflow-x: scroll;
+}
+
+.list .rec-pagination {
+    display: none;
+}
+
+.list .rec-carousel-item {
+    margin-right: 20px;
+}
+.list .rec-carousel-item .tile {
+    margin-right: 10px;
 }
