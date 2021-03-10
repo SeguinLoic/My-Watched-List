@@ -6,6 +6,30 @@
 .navigation .inList {
     display: none;
 }
-.navigation span.active {
-    color: #1daa14;
+
+.list.watchedList .tile .navigation {
+    display: none;
+}
+.list.currentList .tile .navigation .button.current.inCurrent {
+    display: none;
+}
+.latestMovie .content .navigation .button.current.inWatched {
+    display: none;
+}
+
+.navigation .button.current.inWatched {
+    display: none;
+}
+.navigation .button.watched.inWatched, .navigation .button.current.inCurrent {
+    background-color: #5a2bec;
+    pointer-events: none;
+}
+.navigation .button.watched.inWatched img, .navigation .button.current.inCurrent img {
+    filter: invert(1);
+}
+
+.latestMovie .content .navigation  .button.current.inCurrent, .latestMovie .content .navigation .button.watched.inWatched {
+    background-color: #5a2bec;
+    color: #fff;
+    pointer-events: none;
 }

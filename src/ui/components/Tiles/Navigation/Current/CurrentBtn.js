@@ -2,7 +2,7 @@ import React, { useContext } from "react"
 import { StoreContext } from "../../../../../store/Store"
 
 import { updateCurrentList } from "../../../../../domain/Movies/UserLists/CurrentList"
-import { isMovieInCurrentList } from "../../../../../domain/Utils/isMovieInLists"
+import { isMovieInCurrentList, isMovieInWatchedList } from "../../../../../domain/Utils/isMovieInLists"
 
 import computerLogo from "../../../../assets/computer.svg"
 
@@ -16,7 +16,7 @@ export default function CurrentBtn({ movie }) {
     } 
 
     return (
-        <div onClick={addToCurrentList} className={ "button " + isMovieInCurrentList(store, movie) }>
+        <div onClick={addToCurrentList} className={ "button current " + isMovieInCurrentList(store, movie) + isMovieInWatchedList(store, movie) }>
             <img src={computerLogo} />
             <span>En cours</span>
         </div>

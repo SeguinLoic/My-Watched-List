@@ -6,9 +6,10 @@
     display: none;
 }
 
-.list .rec-carousel-item {
-    margin-right: 20px;
+.list .sc-bdfBwQ {
+    background-color: #fff !important;
 }
-.list .rec-carousel-item .tile {
-    margin-right: 10px;
+
+.noCarousel {
+    display: flex;
 }

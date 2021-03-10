@@ -12,7 +12,7 @@ h1 {
 }
 h2 {
     margin-top: 0px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 .bloc:not(:last-child) {
     margin-bottom: 35px;
@@ -72,8 +72,4 @@ form input {
     padding: 10px 15px;
     width: 100%;
     box-sizing: border-box;
-}
-
-.blocSearch {
-    overflow-x: scroll;
 }

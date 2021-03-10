@@ -4,6 +4,7 @@ import List from "../List/List"
 import { searchMovies } from "../../../domain/Movies/Catalog/Search"
 
 import searchLogo from "../../assets/search.svg"
+import cross from "../../assets/cross.svg"
 import "./SearchBar.css"
 
 export default function SearchBar() {
@@ -16,6 +17,10 @@ export default function SearchBar() {
         const movies = await searchMovies(search);
         setResult(movies);
         setSearch("");
+    }
+
+    const closeSearch = () => {
+        setResult([]);
     }
 
     return (
@@ -32,9 +37,12 @@ export default function SearchBar() {
                     result.length 
                     ? 
                         <div className="blocSearch">
-                            <h2>Ma recherche</h2>
-                            <div className="result">
-                                <List list={result} />
+                            <div className="contentSearch">
+                                <div className="closeBTN" onClick={closeSearch}><img src={cross} /></div>
+                                <h2>Résultats de la recherche</h2>
+                                <div className="result">
+                                    <List list={result} />
+                                </div>
                             </div>
                         </div>
                     : 

@@ -48,3 +48,21 @@
     width: 70%;
     line-height: 1.5em;
 }
+
+.btnReturn {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    filter: invert(1);
+    border: 2px solid #000;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btnReturn img {
+    width: 24px;
+}

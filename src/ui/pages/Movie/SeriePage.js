@@ -1,6 +1,8 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 
+import arrow from "../../assets/arrow.svg"
+
 import "./SeriePage.css"
 
 export default function SeriePage() {
@@ -10,6 +12,7 @@ export default function SeriePage() {
     return (
         <div className="page">
             <div className="headerSerie">
+                <Link className="btnReturn" to={`${location.state.location}`}><img src={arrow} /></Link>
                 <span className="background">
                     <img src={`https://image.tmdb.org/t/p/original${location.state.serie.backgroundImage}`} className="backgroundHeader"  alt="hey"/>
                 </span>
@@ -25,7 +28,6 @@ export default function SeriePage() {
                 <span className="date">{location.state.serie.movieDate}</span>
                 <span className="resume">{location.state.serie.movieOverview}</span>
             </div>
-            <Link to={`${location.state.location}`}>Retour</Link>
         </div>
     )
 }
