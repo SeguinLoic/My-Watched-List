@@ -4,6 +4,8 @@ import { loginUser }  from "../../../domain/Authentication/Login";
 import { StoreContext } from "../../../store/Store"
 import "./Login.css";
 
+import fondConnexion from "../../assets/fond-connexion.jpg"
+
 export default function Login() {
 
     const [userInfo, setUserInfo] = useState({userID: "", userPassword: ""});
@@ -22,6 +24,9 @@ export default function Login() {
 
     return (
         <div className="Login">
+            <span className="fondConnexion">
+                <img src={fondConnexion} />
+            </span>
             <div className="formContainer">
                 <div className="formContent">
                     <h1>Connectez-vous !</h1>

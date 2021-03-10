@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { sendResetPassword } from "../../../infra/Authentication/Authentication";
 import LogNavigation from "../../components/AppNavigation/LogNavigation"
 
+import fondConnexion from "../../assets/fond-connexion.jpg"
+
 import "./ForgotPassword.css";
 
 export default function ForgotPassword() {
@@ -21,6 +23,9 @@ export default function ForgotPassword() {
 
     return (
         <div className="forgotPassword">
+            <span className="fondConnexion">
+                <img src={fondConnexion} />
+            </span>
             <div className="formContainer">
                 <div className="formContent">
                     <h1>Mot de passe oublié ? Pas de soucis !</h1>

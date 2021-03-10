@@ -3,6 +3,8 @@ import LogNavigation from "../../components/AppNavigation/LogNavigation"
 import { createUserAcount } from "../../../infra/Authentication/Authentication";
 import "./Signin.css"
 
+import fondConnexion from "../../assets/fond-connexion.jpg"
+
 export default function Signin() {
 
     const [errorMessage, setErrorMessage] = useState('');
@@ -35,6 +37,9 @@ export default function Signin() {
 
     return (
         <div className="signin">
+            <span className="fondConnexion">
+                <img src={fondConnexion} />
+            </span>
             <div className="formContainer">
                 <div className="formContent">
                     <h1>Pas de compte ? Super simple !</h1>

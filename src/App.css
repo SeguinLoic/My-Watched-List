@@ -73,3 +73,18 @@ form input {
     width: 100%;
     box-sizing: border-box;
 }
+
+span.fondConnexion {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+}
+.fondConnexion img {
+    position: absolute;
+    width: 100%;
+    opacity: 0.6;
+}
