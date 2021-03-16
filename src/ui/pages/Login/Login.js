@@ -1,15 +1,16 @@
 import React, { useState, useContext } from "react";
+import { useHistory } from "react-router-dom";
 import LogNavigation from "../../components/AppNavigation/LogNavigation"
 import { loginUser }  from "../../../domain/Authentication/Login";
 import { StoreContext } from "../../../store/Store"
-import "./Login.css";
 
 import fondConnexion from "../../assets/fond-connexion.jpg"
 
 export default function Login() {
 
     const [userInfo, setUserInfo] = useState({userID: "", userPassword: ""});
-    const { dispatch } = useContext(StoreContext)
+    const { dispatch } = useContext(StoreContext);
+    const history = useHistory();
 
     const handleChange = (e) => {
         const value = e.target.value;
@@ -18,14 +19,14 @@ export default function Login() {
 
     const handleLogin = (userID, userPassword, e) => {
         e.preventDefault();
-        loginUser(userID, userPassword, dispatch);
+        loginUser(userID, userPassword, dispatch, history);
         setUserInfo({userID: "", userPassword: ""});
     }
 
     return (
-        <div className="Login">
+        <div className="page connexion login">
             <span className="fondConnexion">
-                <img src={fondConnexion} />
+                <img src={fondConnexion} alt="Affiches films" />
             </span>
             <div className="formContainer">
                 <div className="formContent">

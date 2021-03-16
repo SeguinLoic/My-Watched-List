@@ -2,9 +2,8 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 
 import Navigation from "./Navigation/Navigation";
-import Status from "./Status/Status"
 
-import "./Tiles.css";
+import "./Tiles.scss";
 
 export default function Tile({ serie }) {
 
@@ -22,7 +21,3 @@ export default function Tile({ serie }) {
         </div>
     )
 }
-
-/*
-<Status movie={serie} />
-*/

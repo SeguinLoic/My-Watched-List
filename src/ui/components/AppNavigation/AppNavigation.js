@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-import "./AppNavigation.css";
+import "./Navigation.scss";
 
 export default function AppNavigation() {
 

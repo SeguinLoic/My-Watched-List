@@ -1,16 +1,9 @@
-.signin {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-}
+
 .formSignin {
-    /* border: 1px solid #dfdfdf; */
     width: 450px;
     min-height: 380px;
     padding: 35px;
     box-sizing: border-box;
     border-radius: 5px;
     background-color: #fff;
-    /* box-shadow: 0px 5px 20px -5px rgb(0 0 0 / 10%); */
 }

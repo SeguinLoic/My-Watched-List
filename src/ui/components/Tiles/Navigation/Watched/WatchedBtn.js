@@ -17,7 +17,7 @@ export default function WatchedBtn({ movie }) {
 
     return (
         <div onClick={addToWatchedList} className={ "button watched " + isMovieInWatchedList(store, movie) }>
-            <img src={checkLogo} />
+            <img src={checkLogo} alt="check" />
             <span>Terminé</span>
         </div>
     )

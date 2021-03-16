@@ -17,7 +17,7 @@ export default function CurrentBtn({ movie }) {
 
     return (
         <div onClick={addToCurrentList} className={ "button current " + isMovieInCurrentList(store, movie) + isMovieInWatchedList(store, movie) }>
-            <img src={computerLogo} />
+            <img src={computerLogo} alt="computeur" />
             <span>En cours</span>
         </div>
     )

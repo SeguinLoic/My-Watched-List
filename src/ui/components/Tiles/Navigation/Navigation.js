@@ -3,7 +3,7 @@ import React from "react";
 import CurrentBtn from "./Current/CurrentBtn"
 import WatchedBtn from "./Watched/WatchedBtn"
 
-import "./Navigation.css";
+import "./Navigation.scss";
 
 export default function Navigation({ movie }) {
 

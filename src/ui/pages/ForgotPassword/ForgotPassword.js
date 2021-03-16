@@ -4,8 +4,6 @@ import LogNavigation from "../../components/AppNavigation/LogNavigation"
 
 import fondConnexion from "../../assets/fond-connexion.jpg"
 
-import "./ForgotPassword.css";
-
 export default function ForgotPassword() {
 
     const [errorMessage, setErrorMessage] = useState('');
@@ -22,9 +20,9 @@ export default function ForgotPassword() {
     }
 
     return (
-        <div className="forgotPassword">
+        <div className="page connexion forgotPassword">
             <span className="fondConnexion">
-                <img src={fondConnexion} />
+                <img src={fondConnexion} alt="background connexion" />
             </span>
             <div className="formContainer">
                 <div className="formContent">

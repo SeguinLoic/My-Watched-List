@@ -9,12 +9,12 @@ export const fetchInitialStore = data => {
     return { type: 'INITIALISE_STORE', data };
 }
 
-export const loginUser = async (email, password, dispatch) => {
+export const loginUser = async (email, password, dispatch, history) => {
 
     const response = await userLogin(email, password);
     const userID = response.user.uid;
 
-    window.location = "/Home";
+    history.push("/Home");
     
     setSessionUser(userID);
     getUserData(userID, dispatch);

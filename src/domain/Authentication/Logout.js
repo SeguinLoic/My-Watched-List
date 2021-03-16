@@ -5,9 +5,9 @@ export const clearStore = () => {
     return { type: 'CLEAR_STORE' };
 }
 
-export const logoutUser = (dispatch) => {
+export const logoutUser = (dispatch, history) => {
     clearSessionsUser();
     userLogout();
     dispatch(clearStore());
-    window.location = "/Login";
+    history.push("/Login");
 }

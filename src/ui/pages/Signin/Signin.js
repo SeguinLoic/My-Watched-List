@@ -36,9 +36,9 @@ export default function Signin() {
     }
 
     return (
-        <div className="signin">
+        <div className="page connexion signin">
             <span className="fondConnexion">
-                <img src={fondConnexion} />
+                <img src={fondConnexion} alt="background connexion" />
             </span>
             <div className="formContainer">
                 <div className="formContent">
