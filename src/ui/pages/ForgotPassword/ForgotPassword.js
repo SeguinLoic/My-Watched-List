@@ -30,7 +30,7 @@ export default function ForgotPassword() {
 
                     <form onSubmit={sendEmail} >
                         <input type="text" placeholder="E-mail" value={email} onChange={(e) => setEmail(e.target.value)} />
-                        <button>Demande de mot de passe</button>
+                        <button className="btn primary">Demande de mot de passe</button>
                     </form>
 
                     <div>{ errorMessage }</div>

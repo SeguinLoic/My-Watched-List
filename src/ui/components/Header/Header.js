@@ -5,7 +5,7 @@ import Logout from "../Logout/Logout"
 
 import { StoreContext } from "../../../store/Store";
 
-import "./Header.css";
+import "./Header.scss";
 
 export default function Header() {
 
@@ -13,14 +13,14 @@ export default function Header() {
 
     return (
         <header className="header">
-            <div className="introBloc">
+            <div className="col navigation">
                 <h1>My Watched List</h1>
                 <AppNavigation />
             </div>
-            <div className="searchBloc">
+            <div className="col search">
                 <SearchBar />
             </div>
-            <div className="userBloc">
+            <div className="col user">
                 <span>Hello { store.user.name }</span> 
                 <Logout />
             </div>

@@ -50,7 +50,7 @@ export default function Signin() {
                         <input type="text" placeholder="E-mail" id="email" value={userInfo.email} onChange={handleChange} />
                         <input type="password" placeholder="Mot de passe" id="password" value={userInfo.password} onChange={handleChange} />
                         <input type="password" placeholder="Confirmer mot de passe" id="checkPassword" onChange={handleChange} />
-                        <button type="submit">Créer un compte</button>
+                        <button type="submit" className="btn primary">Créer un compte</button>
                     </form>
 
                     <div>{ errorMessage }</div>

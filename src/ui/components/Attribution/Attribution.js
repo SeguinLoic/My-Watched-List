@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./Attribution.css";
+import "./Attribution.scss";
 import logoTMDB from "../../assets/logo-tmdb.svg";
 
 export default function Attribution() {

@@ -1,0 +1,41 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #e2e2e2;
+    margin-bottom: 35px;
+    padding-bottom: 15px;
+    position: relative;
+
+    .col {
+        display: flex;
+        align-items: flex-end;
+
+        &.search {
+            flex-grow: 1;
+            justify-content: center;
+        }
+
+        &.user {
+            flex-direction: column;
+            > span {
+                font-weight: 700;
+                margin-bottom: 5px;
+                font-size: 0.95em;
+                position: absolute;
+                top: 0;
+                transform: translateY(-130%);
+            }
+        }
+
+        &.navigation {
+            flex-direction: row;
+            h1 {
+                line-height: 1em;
+                margin-right: 25px;
+                color: #5a2bec;
+                font-size: 2.2em;
+            }
+        }
+        
+    }
+}

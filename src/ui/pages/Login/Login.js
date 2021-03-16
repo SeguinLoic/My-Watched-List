@@ -35,7 +35,7 @@ export default function Login() {
                     <form onSubmit={(e) => handleLogin(userInfo.userID, userInfo.userPassword, e)}>
                         <input id="userID"  type="text" placeholder="E-mail" value={userInfo.userID} onChange={handleChange} />
                         <input id="userPassword"  type="password" placeholder="Password" value={userInfo.userPassword} onChange={handleChange} />
-                        <button>Connexion</button>
+                        <button className="btn primary">Connexion</button>
                     </form>
                 </div>
                 <LogNavigation />

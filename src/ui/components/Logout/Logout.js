@@ -13,6 +13,6 @@ export default function Logout() {
         logoutUser(dispatch, history);
     }
 
-    return <button onClick={handleLogout}>Déconnexion</button>
+    return <button className="btn secondary" onClick={handleLogout}>Déconnexion</button>
 
 }
