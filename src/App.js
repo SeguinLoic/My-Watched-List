@@ -1,5 +1,5 @@
 import React from "react";
-import './App.scss';
+import './ui/styles/App.scss';
 
 import Attribution from "./ui/components/Attribution/Attribution";
 import AppRouter from "./router/AppRouter";

@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { sendResetPassword } from "../../../infra/Authentication/Authentication";
-import LogNavigation from "../../components/AppNavigation/LogNavigation"
-
-import fondConnexion from "../../assets/fond-connexion.jpg"
+import Navigation from "../../components/Navigation/Navigation"
 
 export default function ForgotPassword() {
 
@@ -21,12 +19,9 @@ export default function ForgotPassword() {
 
     return (
         <div className="page connexion forgotPassword">
-            <span className="fondConnexion">
-                <img src={fondConnexion} alt="background connexion" />
-            </span>
             <div className="formContainer">
                 <div className="formContent">
-                    <h1>Mot de passe oublié ? Pas de soucis !</h1>
+                    <h2>Mot de passe oublié ? Pas de soucis !</h2>
 
                     <form onSubmit={sendEmail} >
                         <input type="text" placeholder="E-mail" value={email} onChange={(e) => setEmail(e.target.value)} />
@@ -35,7 +30,7 @@ export default function ForgotPassword() {
 
                     <div>{ errorMessage }</div>
                     </div>
-                <LogNavigation />
+                <Navigation />
             </div>
         </div>
     )

@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import AppNavigation from "../AppNavigation/AppNavigation";
+import Navigation from "../Navigation/Navigation";
 import SearchBar from "../SearchBar/SearchBar"
 import Logout from "../Logout/Logout"
 
@@ -15,7 +15,7 @@ export default function Header() {
         <header className="header">
             <div className="col navigation">
                 <h1>My Watched List</h1>
-                <AppNavigation />
+                <Navigation />
             </div>
             <div className="col search">
                 <SearchBar />

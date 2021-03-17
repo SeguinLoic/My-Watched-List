@@ -2,7 +2,7 @@ import React from "react";
 import Navigation from "../Tiles/Navigation/Navigation";
 import { Link, useLocation } from "react-router-dom";
 
-import "./LatestMovie.css";
+import "./LatestMovie.scss";
 
 export default function LatestMovie({ movie }) {
 

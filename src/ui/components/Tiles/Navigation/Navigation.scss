@@ -1,6 +1,6 @@
-@import "../../../../App.scss";
+@import "../../../styles/_variables.scss";
 
-.navigation {
+.tile .navigation {
     display: flex;
     flex-direction: column;
     align-items: flex-start;

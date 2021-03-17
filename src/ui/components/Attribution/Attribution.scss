@@ -1,3 +1,5 @@
+@import "../../styles/_variables.scss";
+
 .attribution {
     position: fixed;
     bottom: 0;
@@ -9,7 +11,7 @@
     height: 55px;
     padding: 0px 100px;
     box-sizing: border-box;
-    border-top: 1px solid #dfdfdf;
+    border-top: 1px solid $line-color;
     background-color: #fff;
 
     img {

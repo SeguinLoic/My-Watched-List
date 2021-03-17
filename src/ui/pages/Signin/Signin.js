@@ -1,9 +1,6 @@
 import React, { useState } from "react";
-import LogNavigation from "../../components/AppNavigation/LogNavigation"
+import Navigation from "../../components/Navigation/Navigation"
 import { createUserAcount } from "../../../infra/Authentication/Authentication";
-import "./Signin.css"
-
-import fondConnexion from "../../assets/fond-connexion.jpg"
 
 export default function Signin() {
 
@@ -37,12 +34,9 @@ export default function Signin() {
 
     return (
         <div className="page connexion signin">
-            <span className="fondConnexion">
-                <img src={fondConnexion} alt="background connexion" />
-            </span>
             <div className="formContainer">
                 <div className="formContent">
-                    <h1>Pas de compte ? Super simple !</h1>
+                    <h2>Pas de compte ? Super simple !</h2>
 
                     <form onSubmit={(e) => createAccount(e)}>
                         <input type="text" placeholder="Nom" id="lastName" value={userInfo.lastName} onChange={handleChange} />
@@ -55,7 +49,7 @@ export default function Signin() {
 
                     <div>{ errorMessage }</div>
                 </div>
-                <LogNavigation />
+                <Navigation />
             </div>
         </div>
     )

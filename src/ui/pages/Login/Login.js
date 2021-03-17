@@ -1,10 +1,8 @@
 import React, { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
-import LogNavigation from "../../components/AppNavigation/LogNavigation"
+import Navigation from "../../components/Navigation/Navigation"
 import { loginUser }  from "../../../domain/Authentication/Login";
 import { StoreContext } from "../../../store/Store"
-
-import fondConnexion from "../../assets/fond-connexion.jpg"
 
 export default function Login() {
 
@@ -25,12 +23,9 @@ export default function Login() {
 
     return (
         <div className="page connexion login">
-            <span className="fondConnexion">
-                <img src={fondConnexion} alt="Affiches films" />
-            </span>
             <div className="formContainer">
                 <div className="formContent">
-                    <h1>Connectez-vous !</h1>
+                    <h2>Connectez-vous !</h2>
 
                     <form onSubmit={(e) => handleLogin(userInfo.userID, userInfo.userPassword, e)}>
                         <input id="userID"  type="text" placeholder="E-mail" value={userInfo.userID} onChange={handleChange} />
@@ -38,7 +33,7 @@ export default function Login() {
                         <button className="btn primary">Connexion</button>
                     </form>
                 </div>
-                <LogNavigation />
+                <Navigation />
             </div>
         </div>
     )
