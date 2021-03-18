@@ -7,7 +7,7 @@ import Login from "../ui/pages/Login/Login";
 import Signin from "../ui/pages/Signin/Signin";
 import Home from "../ui/pages/Home/Home"
 import Profile from "../ui/pages/Profile/Profile"
-import SeriePage from "../ui/pages/Movie/SeriePage";
+import Movie from "../ui/pages/Movie/Movie";
 
 import { getSessionUser } from "../domain/Session/Session"
 import { getUserData } from "../domain/Authentication/Login"
@@ -36,7 +36,7 @@ export default function AppRouter() {
             <>
               <Route exact path="/Home" component={Home} />
               <Route exact path="/Profile" component={Profile} />
-              <Route path="/serie/:name" component={SeriePage} />
+              <Route path="/serie/:name" component={Movie} />
             </>
           ) : (
             <>

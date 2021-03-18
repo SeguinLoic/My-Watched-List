@@ -1,15 +1,9 @@
 .list {
     display: flex;
 }
-
 .list .rec-pagination {
     display: none;
 }
-
-/*.list .sc-bdfBwQ {
-    background-color: #fff !important;
-}*/
-
 .noCarousel {
     display: flex;
 }

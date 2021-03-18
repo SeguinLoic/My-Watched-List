@@ -1,3 +1,4 @@
+@import "../pages/pages.scss";
 @import "./_variables.scss";
 
 /* -- -- APP -- -- */ 
@@ -23,47 +24,6 @@ h1 {
 }
 h2 {
     font-size: 1.7rem;
-}
-
-/* -- -- PAGES -- -- */ 
-.page {
-    width: 100%;
-    padding: 75px;
-    padding-bottom: 130px;
-    display: flex;
-    flex-direction: column;
-
-    &.connexion {
-        justify-content: center;
-        align-items: center;
-        background-image: url(../assets/fond-connexion.jpg);
-
-        .navigation .connected {
-            display: none;
-        }
-
-    }
-
-    &.home, &.profile {
-        
-        .navigation .connexion {
-            display: none;
-        }
-
-    }
-
-}
-
-/* -- -- BLOCS -- -- */ 
-.bloc {
-
-    h2 {
-        margin-bottom: 15px;
-    }
-
-}
-.bloc:not(:last-child) {
-    margin-bottom: 35px;
 }
 
 /* -- -- FORMS -- -- */ 

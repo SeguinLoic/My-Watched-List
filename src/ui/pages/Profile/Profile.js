@@ -5,7 +5,7 @@ import List from "../../components/List/List"
 
 import { StoreContext } from "../../../store/Store"
 
-import "./Profile.css";
+import "./Profile.scss";
 
 export default function Profile() {
 
