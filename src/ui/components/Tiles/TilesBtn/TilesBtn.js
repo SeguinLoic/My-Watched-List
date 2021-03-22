@@ -3,12 +3,12 @@ import React from "react";
 import CurrentBtn from "./Current/CurrentBtn"
 import WatchedBtn from "./Watched/WatchedBtn"
 
-import "./Navigation.scss";
+import "./TilesBtn.scss";
 
-export default function Navigation({ movie }) {
+export default function TilesBtn({ movie }) {
 
     return (
-        <div className="navigation">
+        <div className="tilesBtn">
             <CurrentBtn movie={movie} />
             <WatchedBtn movie={movie} />
         </div>

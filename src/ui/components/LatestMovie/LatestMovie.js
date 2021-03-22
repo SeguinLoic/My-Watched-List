@@ -1,5 +1,5 @@
 import React from "react";
-import Navigation from "../Tiles/Navigation/Navigation";
+import TilesBtn from "../Tiles/TilesBtn/TilesBtn";
 import { Link, useLocation } from "react-router-dom";
 
 import "./LatestMovie.scss";
@@ -17,7 +17,7 @@ export default function LatestMovie({ movie }) {
                 <div className="content">
                     <h2>{movie.movieName}</h2>
                     <span className="rate">{movie.movieRate} / 10</span>
-                    <Navigation movie={movie}/>
+                    <TilesBtn movie={movie}/>
                 </div>
             </Link>
         </div>

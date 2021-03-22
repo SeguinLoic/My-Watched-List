@@ -12,19 +12,15 @@
         justify-content: center;
         align-items: center;
         background-image: $connexion-background;
-
         .navigation .connected {
             display: none;
         }
-
     }
 
     &.home, &.profile {
-        
         .navigation .connexion {
             display: none;
         }
-
     }
 
 }

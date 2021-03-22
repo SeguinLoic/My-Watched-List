@@ -1,0 +1,21 @@
+.list {
+    display: flex;
+    .rec-pagination {
+        display: none;
+    }
+}
+.noCarousel {
+    display: flex;
+    .tile {
+        width: 210px;
+    }
+    /* SLIDE CAROUSEL */
+    .tXlBS {
+        justify-content: flex-start;
+        width: auto !important;
+    }
+    /* BTN NAVIGATION CAROUSEL */
+    .iLquPE {
+        display: none;
+    }
+}

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 
-import Navigation from "./Navigation/Navigation";
+import TilesBtn from "./TilesBtn/TilesBtn";
 
 import "./Tiles.scss";
 
@@ -17,7 +17,7 @@ export default function Tile({ serie }) {
                 <span className="filtre"></span>
                 <span className="name">{serie.movieName}</span>
             </Link>
-            <Navigation movie={serie} />
+            <TilesBtn movie={serie} />
         </div>
     )
 }
