@@ -53,11 +53,11 @@ span.rate {
     margin-right: 25px;
     color: #eaeaea;
 }
-.latestMovie .content .navigation {
+.latestMovie .content .tilesBtn {
     display: flex;
     flex-direction: revert;
 }
-.latestMovie .content .navigation .button {
+.latestMovie .content .tilesBtn .button {
     margin: 0px 5px;
     border: none;
     padding: 10px 15px;
@@ -76,7 +76,7 @@ span.rate {
     width: auto;
     height: auto;
 }
-.latestMovie .content .navigation .button img {
+.latestMovie .content .tilesBtn .button img {
     width: 19px;
     margin-right: 8px;
 }
@@ -85,7 +85,7 @@ span.rate {
 .latestMovie:hover > a > img {
     width: 102%;
 }
-.latestMovie .content .navigation .button:hover {
+.latestMovie .content .tilesBtn .button:hover {
     box-shadow: 0px 5px 30px -1px rgba(0, 0, 0, 0.5);
     background-color: #eaeaea;
 }
