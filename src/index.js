@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App';
-import { AuthProvider } from "./components/Authentication/Auth";
+import App from './App';
+import { StoreProvider } from "./store/Store"
 
 ReactDOM.render(
   <React.StrictMode>
-    <AuthProvider>
+      <StoreProvider>
         <App />
-    </AuthProvider>
+      </StoreProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

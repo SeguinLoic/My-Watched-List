@@ -1,0 +1,31 @@
+@import "../../../styles/_variables.scss";
+
+.tile .tilesBtn {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    .button.watched.inWatched, .button.current.inCurrent {
+        background-color: $main-color;
+        pointer-events: none;
+    }
+
+    .button.watched.inWatched img, .button.current.inCurrent img {
+        filter: invert(1);
+    }
+
+}
+
+.tilesBtn .inList, 
+.list.watchedList .tile .tilesBtn,
+.tilesBtn .button.current.inWatched,
+.list.currentList .tile .tilesBtn .button.current.inCurrent,
+.latestMovie .content .tilesBtn .button.current.inWatched {
+    display: none;
+}
+
+.latestMovie .content .tilesBtn  .button.current.inCurrent, .latestMovie .content .tilesBtn .button.watched.inWatched {
+    background-color: $main-color;
+    color: #fff;
+    pointer-events: none;
+}
