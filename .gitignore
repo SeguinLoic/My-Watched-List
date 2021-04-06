@@ -6,6 +6,7 @@
 .pnp.js
 .env
 work_files
+.netlify
 
 # testing
 /coverage
